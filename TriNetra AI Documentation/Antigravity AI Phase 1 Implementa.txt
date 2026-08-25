@@ -1,0 +1,1523 @@
+# Antigravity AI: Phase 1 Implementation Brief
+## Exact Documents to Prepare & Provide (In This Order)
+
+**Purpose:** Guide Antigravity to build Phase 1 correctly without scope creep, wrong directions, or missing components.
+
+---
+
+## HOW TO USE THIS GUIDE
+
+1. **Prepare each document below** (in order)
+2. **Provide documents to Antigravity** (in order, one at a time or all together)
+3. **Antigravity builds Phase 1** (following the specs exactly)
+4. **Stop condition:** Antigravity MUST stop after Phase 1, wait for approval
+
+---
+
+## DOCUMENT 1: PROJECT CONTEXT BRIEF
+### (Provide this FIRST - Sets the stage)
+
+**File to prepare:** `PROJECT_CONTEXT.md`
+
+**What it should contain:**
+
+```markdown
+# TriNetra AI: Phase 1 Project Context
+
+## 1. Project Identity
+- Name: TriNetra AI
+- Phase: Phase 1 (Research MVP)
+- Objective: Validate core hypothesis about cross-organizational evidence reconciliation
+- Duration: 4-6 weeks
+- Technology: PostgreSQL + Python (ONLY - no React, no APIs, no LLM)
+
+## 2. Core Hypothesis (CRITICAL - Don't change this)
+"Can multi-source, cross-organizational evidence reconciliation reduce false negatives 
+compared with single-source verification?"
+
+## 3. Why This Matters
+- Real problem: 162 verified social media complaints about fragmented evidence
+- Market gap: Nobody has built cross-org evidence reconciliation (248-paper literature review confirms)
+- Customer pain: 106 trust issues, 82 refund issues, 55 delivery problems all map to this
+- Research contribution: First validation that multi-source reconciliation outperforms single-source
+
+## 4. What We Learned From Literature Review
+- 248 research papers analyzed
+- 41 core papers identified (only 20% truly multi-org, 80% component papers)
+- This confirms: The gap exists. Nobody has orchestrated these components together.
+
+## 5. Phase 1 Success Metrics (MUST ACHIEVE)
+- FN Reduction: Multi-source must reduce false negatives by >15% vs. baselines (p<0.05)
+- Precision: ≥0.80 (avoid false accusations)
+- Recall: ≥0.75 (catch real conflicts)
+- F1: ≥0.77
+- FPR: ≤0.15
+- Results must be reproducible
+
+## 6. Absolute Rules (NON-NEGOTIABLE)
+1. Never invent evidence (only use synthetic data with known ground truth)
+2. Never use LLM (Phase 1 is deterministic + statistical only)
+3. Never fabricate results (if baselines outperform, document it)
+4. Never scope creep (no React, APIs, authentication, LLM, production infrastructure)
+5. STOP after Phase 1 (don't automatically proceed to Phase 2)
+```
+
+**Why:** Antigravity needs to understand the WHY before building. Sets context and boundaries.
+
+---
+
+## DOCUMENT 2: PHASE 1 SCOPE & CONSTRAINTS
+### (Provide this SECOND - Prevents scope creep)
+
+**File to prepare:** `PHASE_1_SCOPE.md`
+
+**What it should contain:**
+
+```markdown
+# Phase 1 Scope: Research MVP (FINAL & FROZEN)
+
+## PHASE 1 WILL INCLUDE (8 Components)
+
+### 1. PostgreSQL Schema
+- entity_resolution table (maps org-specific IDs to canonical products)
+- evidence_record table (stores evidence from different sources)
+- evidence_attribute table (normalizes individual evidence attributes)
+- ground_truth table (for evaluation)
+- predictions table (to store baseline + TriNetra predictions)
+
+### 2. Canonical Normalization Engine
+- Normalize SKU: "TS-204", "TS204", "ts204" → "TS-204"
+- Normalize Weight: "500g", "0.5kg", "500 grams" → 500 (grams)
+- Normalize Size: "XL", "extra large", "x-large" → "XL"
+- Normalize Color: "red", "RED", "bright red" → "RED"
+- Normalize Timestamp: Multiple formats → ISO 8601
+
+### 3. Entity Resolution
+- Map organization-specific IDs to canonical product IDs
+- Example: Seller's "PROD-001" + Warehouse's "SKU-2845" + Carrier's "PKG-9999" → UUID "PRODUCT-XYZ"
+- Track resolution confidence (deterministic = 100%)
+
+### 4. Synthetic Data Generator
+- Create 1000+ product lifecycles (normal + conflict cases)
+- Evidence flow: ORDER → SELLER → WAREHOUSE → CARRIER → DELIVERY → RETURN
+- Inject 5 conflict types: Identity, SKU, Weight anomaly, Temporal, Missing evidence
+- Every case MUST have ground truth label
+- 90% normal cases, 10% conflict cases
+
+### 5. Deterministic Reconciliation Engine
+- Check identity consistency (do all sources agree on product ID?)
+- Check attribute matching (do SKUs match? Do sizes match?)
+- Check timestamp ordering (are events in logical order?)
+- Produce output: CONSISTENT or CONFLICT + list of detected conflicts
+
+### 6. Statistical Anomaly Detection
+- Weight analysis: mean ± 3×stddev (production variance tolerance)
+- Detect weight anomalies in return center evidence (weight drop = missing product)
+- Output: WEIGHT_ANOMALY if weight differs significantly
+
+### 7. Three Baselines (for comparison)
+- Baseline 1: Identity-only verification (check SKU match only)
+- Baseline 2: Weight-only anomaly detection (check weight variance only)
+- Baseline 3: Timeline-only verification (check timestamp ordering only)
+- Baselines represent "single-source" approaches
+
+### 8. Evaluation Module
+- Calculate: Precision, Recall, F1, FPR, FNR, False Negative Reduction
+- Generate confusion matrices
+- Ablation study (test component importance: Identity → Identity+Weight → Identity+Timeline → Full)
+- Output: CSV with all metrics
+
+## PHASE 1 WILL NOT INCLUDE (Forbidden)
+
+❌ React dashboard / frontend UI
+❌ REST APIs / HTTP endpoints
+❌ Authentication / authorization
+❌ LLM / language model usage
+❌ Computer vision / image processing
+❌ Redis caching
+❌ Kafka streaming
+❌ Microservices architecture
+❌ Docker / Kubernetes
+❌ Production deployment scripts
+❌ Real e-commerce integrations
+❌ Customer portal
+
+**These belong in Phases 2-14. DO NOT BUILD THEM IN PHASE 1.**
+
+## Repository Structure
+
+```
+phase-1/
+├── schema/
+│   ├── schema.sql
+│   ├── tables.sql
+│   └── indexes.sql
+│
+├── generator/
+│   ├── synthetic_generator.py
+│   ├── conflict_injector.py
+│   └── lifecycle_builder.py
+│
+├── normalization/
+│   ├── canonical_normalizer.py
+│   ├── sku_normalizer.py
+│   ├── weight_normalizer.py
+│   └── timestamp_normalizer.py
+│
+├── resolution/
+│   ├── entity_resolver.py
+│   └── resolution_logic.py
+│
+├── engine/
+│   ├── reconciliation_engine.py
+│   ├── identity_checker.py
+│   ├── weight_detector.py
+│   └── timeline_validator.py
+│
+├── baselines/
+│   ├── baseline_1_identity.py
+│   ├── baseline_2_weight.py
+│   └── baseline_3_timeline.py
+│
+├── evaluation/
+│   ├── evaluator.py
+│   ├── metrics.py
+│   └── confusion_matrix.py
+│
+├── data/
+│   ├── synthetic_evidence.csv (output)
+│   ├── ground_truth.csv (output)
+│   └── predictions.csv (output)
+│
+├── results/
+│   ├── metrics.csv (output)
+│   ├── ablation_results.csv (output)
+│   ├── confusion_matrices.json (output)
+│   ├── experiment_summary.md (output)
+│   └── PHASE_1_RESULTS.md (output)
+│
+├── tests/
+│   ├── test_normalizer.py
+│   ├── test_entity_resolver.py
+│   ├── test_reconciliation.py
+│   └── test_baselines.py
+│
+└── README.md (reproducibility instructions)
+```
+
+## Success Definition (Phase 1 is DONE when...)
+
+- [x] PostgreSQL schema created and tested
+- [x] Normalization engine handles all attribute types
+- [x] Entity resolver maps org IDs to canonical IDs correctly
+- [x] Synthetic data generator produces 1000+ cases with ground truth
+- [x] Three baselines implemented and working
+- [x] TriNetra reconciliation engine working correctly
+- [x] All cases evaluated against ground truth
+- [x] Metrics calculated (precision, recall, F1, FPR, FNR, FN reduction)
+- [x] Ablation study completed
+- [x] Error analysis documented
+- [x] Code is reproducible (anyone can re-run and get same results)
+- [x] Phase 1 results report written
+- [x] STOP condition triggered (waiting for Phase 2 approval)
+```
+
+**Why:** Antigravity needs clear scope boundaries. The "WON'T INCLUDE" list is critical to prevent scope creep.
+
+---
+
+## DOCUMENT 3: EVIDENCE TAXONOMY
+### (Provide this THIRD - Defines what evidence looks like)
+
+**File to prepare:** `EVIDENCE_TAXONOMY.md`
+
+**What it should contain:**
+
+```markdown
+# Evidence Taxonomy for Phase 1
+
+## Evidence Sources (8 types)
+
+### 1. ORDER
+- What: Initial customer order data
+- Fields: order_id, product_id, sku, size, color, quantity, timestamp
+- Example: {"order_id": "ORD-001", "sku": "TS-204", "size": "XL"}
+
+### 2. SELLER
+- What: Seller's dispatch/fulfillment record
+- Fields: seller_id, order_id, product_id, sku, size, color, quantity, weight, timestamp
+- Example: {"seller_id": "SELLER-123", "sku": "TS-204", "weight": 500, "timestamp": "2026-08-23T10:00:00Z"}
+
+### 3. WAREHOUSE
+- What: Warehouse receiving and inspection
+- Fields: warehouse_id, order_id, product_id, sku, size, color, quantity, weight, seal_status, timestamp
+- Example: {"warehouse_id": "WH-001", "sku": "TS-204", "weight": 505, "seal_status": "intact"}
+
+### 4. PACKAGING
+- What: Packaging operation (optional in Phase 1)
+- Fields: packaging_id, order_id, product_id, sku, weight_packaged, timestamp
+- Example: {"packaging_id": "PKG-001", "weight_packaged": 510}
+
+### 5. CARRIER
+- What: Logistics provider (pickup, in-transit, delivery)
+- Fields: carrier_id, order_id, tracking_id, weight, timestamp
+- Example: {"carrier_id": "CARRIER-001", "weight": 505, "timestamp": "2026-08-23T12:00:00Z"}
+
+### 6. DELIVERY
+- What: Delivery confirmation
+- Fields: delivery_id, order_id, delivered_status, timestamp
+- Example: {"delivery_id": "DEL-001", "delivered_status": "delivered", "timestamp": "2026-08-23T14:00:00Z"}
+
+### 7. RETURN
+- What: Return center receipt and inspection
+- Fields: return_id, order_id, product_id, sku, weight, condition, timestamp
+- Example: {"return_id": "RET-001", "sku": "TS-204", "weight": 210, "condition": "damaged"}
+
+### 8. MARKETPLACE
+- What: Dispute/complaint data
+- Fields: case_id, order_id, customer_claim, timestamp
+- Example: {"case_id": "CASE-001", "customer_claim": "item missing from package"}
+
+## Normalization Rules (MUST implement)
+
+### SKU Normalization
+Input: "TS-204", "TS204", "ts-204", "TS 204"
+Output: "TS-204" (canonical)
+Rule: Convert to uppercase, insert hyphen between letters and numbers
+
+### Weight Normalization
+Input: "500g", "0.5kg", "500 grams", "0.5 kilograms"
+Output: 500 (integer, in grams)
+Rule: Convert all to grams, return as integer
+
+### Size Normalization
+Input: "XL", "x-large", "extra large", "extra-large", "xl"
+Output: "XL" (canonical)
+Rule: Map all variations to canonical size format
+
+### Color Normalization
+Input: "red", "RED", "dark red", "bright red"
+Output: "RED" (canonical)
+Rule: Convert to uppercase, remove modifiers for basic color
+
+### Timestamp Normalization
+Input: "2026-08-23T10:00:00Z", "08/23/2026 10:00 AM", "23-Aug-2026 10:00:00"
+Output: "2026-08-23T10:00:00Z" (ISO 8601)
+Rule: Convert all to ISO 8601 UTC format
+
+## Conflict Types (5 types to test)
+
+### 1. IDENTITY_CONFLICT
+- Definition: Different sources claim different product IDs for same order
+- Detection: Do all sources agree on SKU?
+- Example: Seller says TS-204, Warehouse says TS-203
+- Impact: HIGH (suggests wrong product dispatched)
+
+### 2. SKU_CONFLICT
+- Definition: Normalized SKUs don't match across sources
+- Detection: Identity verification + SKU comparison
+- Example: Order=TS-204, Warehouse=TS-203
+- Impact: HIGH (variant mismatch)
+
+### 3. WEIGHT_ANOMALY
+- Definition: Weight drop > 3 standard deviations
+- Detection: Statistical analysis (mean ± 3×stddev)
+- Example: Outbound=500g, Return=210g (58% drop)
+- Impact: MEDIUM-HIGH (suggests product missing)
+
+### 4. TEMPORAL_CONFLICT
+- Definition: Events out of chronological order
+- Detection: Timestamp sequence validation
+- Example: Warehouse timestamp BEFORE order timestamp
+- Impact: MEDIUM (data quality issue)
+
+### 5. MISSING_EVIDENCE
+- Definition: Expected evidence source is absent
+- Detection: Check for gaps in evidence chain
+- Example: No carrier data between warehouse and return
+- Impact: LOW-MEDIUM (incomplete picture)
+
+## Attribute Categories
+
+### Identity Attributes
+- product_id (UUID)
+- order_id (UUID)
+- sku (string)
+
+### Product Attributes
+- size (string)
+- color (string)
+- variant (string)
+- batch_id (string)
+- serial_number (string)
+
+### Physical Attributes
+- weight (integer, grams)
+- dimensions (string)
+- seal_status (string)
+- condition (string)
+
+### Temporal Attributes
+- timestamp (ISO 8601)
+- event_type (string)
+
+## Ground Truth Representation
+
+Every synthetic case MUST have ground truth label:
+
+```python
+{
+  "case_id": "CASE-001",
+  "ground_truth": "CONFLICT",  # or "CONSISTENT"
+  "conflict_types": ["WEIGHT_ANOMALY"],
+  "root_cause": "Product missing from return (weight drop from 500g to 210g)",
+  "severity": "HIGH",
+  "evidence": [...]
+}
+```
+```
+
+**Why:** Antigravity needs to understand what evidence is and how to structure/normalize it. This prevents misinterpretation.
+
+---
+
+## DOCUMENT 4: CONFLICT TAXONOMY & DETECTION RULES
+### (Provide this FOURTH - Defines how conflicts are detected)
+
+**File to prepare:** `CONFLICT_TAXONOMY.md`
+
+**What it should contain:**
+
+```markdown
+# Conflict Taxonomy: Detection Rules & Output Format
+
+## Conflict Detection Rules (MUST implement exactly)
+
+### IDENTITY_CONFLICT Detection
+```
+IF (SELLER.sku ≠ ORDER.sku) OR (WAREHOUSE.sku ≠ ORDER.sku)
+THEN
+  OUTPUT: IDENTITY_CONFLICT
+  SEVERITY: HIGH
+  RECOMMENDATION: Verification required before dispatch
+END
+```
+
+### SKU_CONFLICT Detection
+```
+same as IDENTITY_CONFLICT (in Phase 1, treat as same)
+```
+
+### WEIGHT_ANOMALY Detection
+```
+CALCULATE:
+  mean_weight = average of all recorded weights
+  stddev_weight = standard deviation
+  threshold = mean_weight ± 3 * stddev_weight
+
+FOR EACH evidence.weight:
+  IF weight < (mean - 3*stddev) OR weight > (mean + 3*stddev)
+  THEN
+    OUTPUT: WEIGHT_ANOMALY
+    SEVERITY: MEDIUM-HIGH
+    ANOMALY_MAGNITUDE: (recorded_weight - expected_weight) / expected_weight
+  END
+END
+```
+
+### TEMPORAL_CONFLICT Detection
+```
+SORT all evidence by timestamp
+FOR EACH adjacent pair (event1, event2):
+  IF event1.timestamp > event2.timestamp
+  AND event1.type should_precede event2.type
+  THEN
+    OUTPUT: TEMPORAL_CONFLICT
+    SEVERITY: MEDIUM
+    RECOMMENDATION: Check data quality
+  END
+END
+
+Expected order:
+1. ORDER
+2. SELLER dispatch
+3. WAREHOUSE receive
+4. CARRIER pickup
+5. DELIVERY
+6. RETURN
+```
+
+### MISSING_EVIDENCE Detection
+```
+expected_sources = [ORDER, SELLER, WAREHOUSE, CARRIER, RETURN]
+provided_sources = sources in this case
+
+missing = expected_sources - provided_sources
+
+IF len(missing) > 0
+THEN
+  OUTPUT: MISSING_EVIDENCE
+  SEVERITY: LOW-MEDIUM
+  MISSING: [list of sources]
+  IMPACT: "Cannot fully reconcile without [missing sources]"
+END
+```
+
+## Reconciliation Output Format (MUST be structured like this)
+
+```python
+{
+  "case_id": "CASE-001",
+  "status": "INCONSISTENT",  # or "CONSISTENT" or "INCONCLUSIVE"
+  "conflicts": [
+    {
+      "conflict_type": "WEIGHT_ANOMALY",
+      "severity": "HIGH",
+      "evidence_sources": ["WAREHOUSE", "CARRIER", "RETURN"],
+      "measurement_outbound": 500,
+      "measurement_return": 210,
+      "variance": "58% drop",
+      "interpretation": "Product likely missing from return package"
+    }
+  ],
+  "evidence_sources_provided": ["ORDER", "SELLER", "WAREHOUSE", "CARRIER", "RETURN"],
+  "evidence_sources_missing": [],
+  "recommendation": "VERIFY",  # or "CONSISTENT" or "INCONCLUSIVE"
+  "confidence_score": 0.92,  # Optional: how confident in the recommendation?
+  "provenance": {
+    "evidence_count": 5,
+    "attributes_checked": ["sku", "weight", "timestamp"],
+    "normalization_applied": true,
+    "entity_resolution_successful": true
+  }
+}
+```
+
+## Baseline Output Format
+
+### Baseline 1 (Identity-only)
+```python
+{
+  "case_id": "CASE-001",
+  "baseline": "IDENTITY_ONLY",
+  "prediction": "CONSISTENT",  # or "CONFLICT"
+  "reasoning": "All sources agree on SKU=TS-204",
+  "evidence_checked": ["ORDER.sku", "SELLER.sku", "WAREHOUSE.sku"]
+}
+```
+
+### Baseline 2 (Weight-only)
+```python
+{
+  "case_id": "CASE-001",
+  "baseline": "WEIGHT_ONLY",
+  "prediction": "CONFLICT",
+  "anomaly_detected": "WEIGHT_ANOMALY",
+  "measurement_variance": 0.58,  # 58% drop
+  "evidence_checked": ["WAREHOUSE.weight", "CARRIER.weight", "RETURN.weight"]
+}
+```
+
+### Baseline 3 (Timeline-only)
+```python
+{
+  "case_id": "CASE-001",
+  "baseline": "TIMELINE_ONLY",
+  "prediction": "CONSISTENT",
+  "reasoning": "All events in chronological order",
+  "evidence_checked": ["ORDER.timestamp", "WAREHOUSE.timestamp", "RETURN.timestamp"]
+}
+```
+
+## Allowed Output Statuses
+
+- CONSISTENT: No conflicts detected across any sources
+- CONFLICT: One or more conflicts detected
+- INCONCLUSIVE: Incomplete evidence (missing sources) prevents clear assessment
+```
+
+**Why:** Antigravity needs exact rules for what counts as a conflict and how to structure the output. No room for interpretation.
+
+---
+
+## DOCUMENT 5: EVALUATION METRICS & FORMULAS
+### (Provide this FIFTH - Defines success criteria precisely)
+
+**File to prepare:** `EVALUATION_METRICS.md`
+
+**What it should contain:**
+
+```markdown
+# Phase 1 Evaluation Metrics
+
+## Primary Success Metric: False Negative Reduction
+
+```
+FN_Reduction = (FN_Baseline - FN_TriNetra) / FN_Baseline * 100%
+
+Where:
+  FN_Baseline = False negative rate of best baseline (%) 
+  FN_TriNetra = False negative rate of TriNetra (%)
+
+Example:
+  Baseline FN rate = 25%
+  TriNetra FN rate = 15%
+  FN_Reduction = (25-15)/25 * 100% = 40%
+
+SUCCESS THRESHOLD: FN_Reduction > 15% with p-value < 0.05
+```
+
+## Secondary Metrics (MUST calculate all)
+
+### Precision
+```
+Precision = TP / (TP + FP)
+
+Where:
+  TP = True Positives (correctly identified conflicts)
+  FP = False Positives (incorrectly identified conflicts)
+
+Interpretation: Of all conflicts flagged, how many are real?
+Target: ≥0.80 (avoid falsely accusing innocent customers/sellers)
+```
+
+### Recall
+```
+Recall = TP / (TP + FN)
+
+Where:
+  TP = True Positives
+  FN = False Negatives (missed conflicts)
+
+Interpretation: Of all real conflicts, how many did we catch?
+Target: ≥0.75 (catch 75%+ of actual issues)
+```
+
+### F1 Score
+```
+F1 = 2 * (Precision * Recall) / (Precision + Recall)
+
+Interpretation: Balanced harmonic mean of precision and recall
+Target: ≥0.77
+```
+
+### False Positive Rate (FPR)
+```
+FPR = FP / (FP + TN)
+
+Where:
+  FP = False Positives
+  TN = True Negatives (correctly identified consistent cases)
+
+Interpretation: Of all consistent cases, what % do we incorrectly flag?
+Target: ≤0.15 (don't overwhelm reviewers with false alarms)
+```
+
+### False Negative Rate (FNR)
+```
+FNR = FN / (FN + TP)
+
+Interpretation: Of all real conflicts, what % do we miss?
+Target: <0.25 (TriNetra should catch at least 75% of real conflicts)
+```
+
+## Comparison Metrics (Must compare baseline vs. TriNetra)
+
+### Per-Baseline Comparison
+
+```
+Baseline 1 (Identity-only):
+  Precision_B1, Recall_B1, F1_B1, FPR_B1, FNR_B1
+
+Baseline 2 (Weight-only):
+  Precision_B2, Recall_B2, F1_B2, FPR_B2, FNR_B2
+
+Baseline 3 (Timeline-only):
+  Precision_B3, Recall_B3, F1_B3, FPR_B3, FNR_B3
+
+TriNetra (Multi-source):
+  Precision_T, Recall_T, F1_T, FPR_T, FNR_T
+
+Comparison:
+  Delta_Precision = Precision_T - max(Precision_B1, B2, B3)
+  Delta_Recall = Recall_T - max(Recall_B1, B2, B3)
+  Delta_F1 = F1_T - max(F1_B1, B2, B3)
+  Delta_FNR = FNR_Best_Baseline - FNR_T  (FN reduction)
+```
+
+## Per-Conflict-Type Metrics
+
+Calculate metrics separately for each conflict type:
+
+```
+For IDENTITY_CONFLICT cases:
+  Precision (IDENTITY)
+  Recall (IDENTITY)
+  F1 (IDENTITY)
+
+For WEIGHT_ANOMALY cases:
+  Precision (WEIGHT)
+  Recall (WEIGHT)
+  F1 (WEIGHT)
+
+For TEMPORAL_CONFLICT cases:
+  Precision (TEMPORAL)
+  Recall (TEMPORAL)
+  F1 (TEMPORAL)
+
+[etc for all conflict types]
+
+This shows which conflict types TriNetra is best/worst at detecting.
+```
+
+## Confusion Matrix
+
+Generate and report:
+
+```
+                 Predicted: CONFLICT    Predicted: CONSISTENT
+Actual: CONFLICT        TP                       FN
+Actual: CONSISTENT      FP                       TN
+
+Example (1000 cases):
+                 Predicted: CONFLICT    Predicted: CONSISTENT
+Actual: CONFLICT    95 (TP)                  15 (FN)
+Actual: CONSISTENT  45 (FP)                 845 (TN)
+
+Metrics from this:
+  Precision = 95/(95+45) = 0.678
+  Recall = 95/(95+15) = 0.863
+  F1 = 0.756
+  FPR = 45/(45+845) = 0.050
+  FNR = 15/(15+95) = 0.136
+```
+
+## Ablation Study Metrics
+
+Test component importance by removing one at a time:
+
+```
+Component Level 1: Identity-only
+  FNR: X%
+  
+Component Level 2: Identity + Weight
+  FNR: Y%  (compared to Level 1)
+  Improvement: (X-Y)/X%
+  
+Component Level 3: Identity + Timeline
+  FNR: Z%
+  
+Component Level 4: Identity + Weight + Timeline
+  FNR: W%
+  
+Conclusion: Which component contributes most to FN reduction?
+```
+
+## Statistical Significance
+
+For the primary metric (FN reduction), calculate:
+
+```
+Null hypothesis: TriNetra FNR = Baseline FNR
+Alternative hypothesis: TriNetra FNR < Baseline FNR
+
+Test: McNemar's test (for paired binary outcomes)
+or: Permutation test (if data doesn't meet assumptions)
+
+Report: p-value
+Target: p-value < 0.05 (statistically significant improvement)
+```
+
+## Output Format for Metrics
+
+Create `metrics.csv` with all calculations:
+
+```
+Metric,Baseline1_Identity,Baseline2_Weight,Baseline3_Timeline,TriNetra_MultiSource
+Precision,0.72,0.68,0.75,0.82
+Recall,0.65,0.70,0.72,0.78
+F1,0.68,0.69,0.73,0.80
+FPR,0.18,0.15,0.12,0.08
+FNR,0.35,0.30,0.28,0.22
+FNR_Reduction,0%,14%,20%,37%
+```
+
+## Success Criteria (MUST meet ALL)
+
+- [x] FN Reduction > 15% (p < 0.05) ← PRIMARY
+- [x] Precision ≥ 0.80
+- [x] Recall ≥ 0.75
+- [x] F1 ≥ 0.77
+- [x] FPR ≤ 0.15
+- [x] Statistically significant improvement over all 3 baselines
+- [x] Ablation study shows which components matter most
+- [x] Results are reproducible
+```
+
+**Why:** Antigravity needs exact formulas, not interpretation. Numbers speak for themselves.
+
+---
+
+## DOCUMENT 6: SYNTHETIC DATA GENERATION SPECIFICATION
+### (Provide this SIXTH - Defines how to create test data)
+
+**File to prepare:** `SYNTHETIC_DATA_SPEC.md`
+
+**What it should contain:**
+
+```markdown
+# Synthetic Data Generation Specification
+
+## Overview
+Generate 1000 synthetic product lifecycles where:
+- 900 (90%) are NORMAL cases (no conflicts)
+- 100 (10%) have injected CONFLICT cases
+- Every case has ground truth label
+- Every case is reproducible (seed-based randomization)
+
+## Case Template Structure
+
+```python
+{
+  "case_id": "CASE-001",
+  "product": {
+    "order_id": "ORD-001",
+    "product_id": "PROD-UUID",
+    "sku": "TS-204",
+    "size": "XL",
+    "color": "RED",
+    "quantity": 1,
+    "base_weight": 500  # grams
+  },
+  "evidence": [
+    # evidence from ORDER
+    # evidence from SELLER
+    # evidence from WAREHOUSE
+    # evidence from CARRIER
+    # evidence from RETURN
+  ],
+  "ground_truth": "CONSISTENT"  # or "CONFLICT"
+}
+```
+
+## Normal Case Generation (900 cases)
+
+### Template: Normal T-Shirt Lifecycle
+
+```python
+case = {
+  "case_id": f"CASE-{i:06d}",
+  "product": {
+    "order_id": f"ORD-{i:06d}",
+    "product_id": f"PROD-{uuid()}",
+    "sku": "TS-204",
+    "size": "XL",
+    "color": "RED",
+    "quantity": 1,
+    "base_weight": 500
+  },
+  "evidence": [
+    {
+      "source": "ORDER",
+      "order_id": f"ORD-{i:06d}",
+      "sku": "TS-204",
+      "size": "XL",
+      "color": "RED",
+      "quantity": 1,
+      "timestamp": "2026-08-23T10:00:00Z"
+    },
+    {
+      "source": "SELLER",
+      "seller_id": "SELLER-001",
+      "sku": "TS-204",
+      "size": "XL",
+      "color": "RED",
+      "weight": 505,  # ±5g variance OK
+      "timestamp": "2026-08-23T10:15:00Z"
+    },
+    {
+      "source": "WAREHOUSE",
+      "warehouse_id": "WH-001",
+      "sku": "TS-204",
+      "size": "XL",
+      "color": "RED",
+      "weight": 502,  # ±5g variance OK
+      "seal_status": "intact",
+      "timestamp": "2026-08-23T11:00:00Z"
+    },
+    {
+      "source": "CARRIER",
+      "carrier_id": "CARRIER-001",
+      "tracking_id": f"TRK-{i:06d}",
+      "weight": 510,  # ±10g variance OK
+      "timestamp": "2026-08-23T12:00:00Z"
+    },
+    {
+      "source": "RETURN",
+      "return_id": f"RET-{i:06d}",
+      "sku": "TS-204",
+      "size": "XL",
+      "color": "RED",
+      "weight": 505,  # Should match outbound
+      "condition": "good",
+      "timestamp": "2026-08-23T14:00:00Z"
+    }
+  ],
+  "ground_truth": "CONSISTENT"
+}
+```
+
+## Conflict Case Generation (100 cases)
+
+### Conflict Type 1: IDENTITY_CONFLICT (30 cases)
+
+Template: Wrong product dispatched by seller
+
+```python
+case = {
+  "case_id": f"CASE-{i:06d}",
+  "ground_truth": "CONFLICT",
+  "conflict_type": "IDENTITY_CONFLICT",
+  "evidence": [
+    {
+      "source": "ORDER",
+      "sku": "TS-204"  # Customer ordered TS-204
+    },
+    {
+      "source": "SELLER",
+      "sku": "TS-203"  # Seller dispatched TS-203 ← CONFLICT!
+    },
+    {
+      "source": "WAREHOUSE",
+      "sku": "TS-203"  # Warehouse received TS-203
+    },
+    {
+      "source": "RETURN",
+      "sku": "TS-203"  # Customer returned TS-203
+    }
+  ]
+}
+```
+
+### Conflict Type 2: WEIGHT_ANOMALY (40 cases)
+
+Template: Product missing from return
+
+```python
+case = {
+  "case_id": f"CASE-{i:06d}",
+  "ground_truth": "CONFLICT",
+  "conflict_type": "WEIGHT_ANOMALY",
+  "evidence": [
+    {
+      "source": "SELLER",
+      "weight": 500
+    },
+    {
+      "source": "WAREHOUSE",
+      "weight": 505
+    },
+    {
+      "source": "CARRIER",
+      "weight": 510
+    },
+    {
+      "source": "RETURN",
+      "weight": 210  # HUGE DROP ← CONFLICT!
+      # (58% weight loss suggests product missing from package)
+    }
+  ]
+}
+```
+
+### Conflict Type 3: TEMPORAL_CONFLICT (15 cases)
+
+Template: Events out of order
+
+```python
+case = {
+  "case_id": f"CASE-{i:06d}",
+  "ground_truth": "CONFLICT",
+  "conflict_type": "TEMPORAL_CONFLICT",
+  "evidence": [
+    {
+      "source": "ORDER",
+      "timestamp": "2026-08-23T10:00:00Z"
+    },
+    {
+      "source": "WAREHOUSE",
+      "timestamp": "2026-08-23T09:30:00Z"  # BEFORE ORDER ← CONFLICT!
+    },
+    {
+      "source": "RETURN",
+      "timestamp": "2026-08-23T14:00:00Z"
+    }
+  ]
+}
+```
+
+### Conflict Type 4: SKU_VARIANT_CONFLICT (10 cases)
+
+Template: Wrong size shipped
+
+```python
+case = {
+  "case_id": f"CASE-{i:06d}",
+  "ground_truth": "CONFLICT",
+  "conflict_type": "VARIANT_CONFLICT",
+  "evidence": [
+    {
+      "source": "ORDER",
+      "size": "XL"
+    },
+    {
+      "source": "WAREHOUSE",
+      "size": "M"  # Wrong size ← CONFLICT!
+    },
+    {
+      "source": "RETURN",
+      "size": "M"
+    }
+  ]
+}
+```
+
+### Conflict Type 5: MISSING_EVIDENCE (5 cases)
+
+Template: Incomplete evidence chain
+
+```python
+case = {
+  "case_id": f"CASE-{i:06d}",
+  "ground_truth": "INCONCLUSIVE",
+  "conflict_type": "MISSING_EVIDENCE",
+  "evidence": [
+    {
+      "source": "ORDER"
+    },
+    {
+      "source": "SELLER"
+    },
+    {
+      "source": "WAREHOUSE"
+    },
+    # MISSING: CARRIER
+    {
+      "source": "RETURN"
+    }
+  ]
+}
+```
+
+## Data Distribution (1000 cases total)
+
+```
+NORMAL cases:        900 (90%)
+├─ All attributes consistent
+├─ Weights ±5-10g variance (normal)
+├─ Events in chronological order
+└─ Ground truth: CONSISTENT
+
+CONFLICT cases:      100 (10%)
+├─ IDENTITY:        30 cases (Seller dispatches wrong product)
+├─ WEIGHT_ANOMALY:  40 cases (Product missing from return)
+├─ TEMPORAL:        15 cases (Events out of order)
+├─ VARIANT:         10 cases (Wrong size/color shipped)
+└─ MISSING:          5 cases (Incomplete evidence)
+```
+
+## Generation Rules (MUST follow)
+
+1. **Use deterministic randomization** (seed-based, so results reproducible)
+2. **Vary product attributes** (don't generate identical cases)
+   - SKU: TS-204, TS-205, TS-206, etc.
+   - Size: XL, L, M, S
+   - Color: RED, BLUE, BLACK, WHITE
+   - Base weight: 400-600g (varied)
+
+3. **Add realistic noise** (±5g variance in normal cases)
+   - Outbound weight: base_weight ± random(0-10)
+   - Carrier weight: warehouse_weight ± random(0-10)
+   - Return weight: outbound_weight ± random(0-10) for normal cases
+
+4. **Timestamp progression** (events should flow forward)
+   - Order: 2026-08-23T10:00:00Z
+   - Seller: +15 min
+   - Warehouse: +1 hour
+   - Carrier: +2 hours
+   - Return: +4 hours
+
+5. **Never fake the ground truth** (trust your conflict injection)
+   - If you injected a conflict, ground_truth = "CONFLICT"
+   - If no conflict injected, ground_truth = "CONSISTENT"
+   - Don't second-guess your own injection logic
+
+## Output File Format
+
+Save to `synthetic_evidence.csv`:
+
+```
+case_id,evidence_index,source,attribute,value,normalized_value
+CASE-000001,1,ORDER,sku,TS-204,TS-204
+CASE-000001,2,SELLER,sku,TS-204,TS-204
+CASE-000001,3,SELLER,weight,500g,500
+CASE-000001,4,WAREHOUSE,weight,505g,505
+...
+```
+
+Save to `ground_truth.csv`:
+
+```
+case_id,expected_status,conflict_types,severity
+CASE-000001,CONSISTENT,,NONE
+CASE-000002,CONFLICT,WEIGHT_ANOMALY,HIGH
+CASE-000003,CONFLICT,IDENTITY_CONFLICT,HIGH
+...
+```
+
+## Reproducibility
+
+Set random seed at start:
+
+```python
+import random
+random.seed(42)  # Fixed seed = reproducible results
+np.random.seed(42)
+
+# Generate all 1000 cases using this seed
+# Anyone else running with seed=42 should get identical cases
+```
+```
+
+**Why:** Antigravity needs exact specifications for data generation. Randomness without reproducibility is a research red flag.
+
+---
+
+## DOCUMENT 7: STOP CONDITION (CRITICAL)
+### (Provide this SEVENTH - Prevents scope creep)
+
+**File to prepare:** `PHASE_1_STOP_CONDITION.md`
+
+**What it should contain:**
+
+```markdown
+# Phase 1 STOP CONDITION (NON-NEGOTIABLE)
+
+## The STOP Rule
+
+**After Phase 1 deliverables are complete, YOU MUST STOP.**
+
+You must NOT automatically proceed to Phase 2.
+
+## What Triggers STOP
+
+When ALL of the following are complete:
+- [x] PostgreSQL schema created and tested
+- [x] Normalization engine working (all attribute types)
+- [x] Entity resolution working (org IDs → canonical)
+- [x] Synthetic data generator produces 1000 cases + ground truth
+- [x] 3 baselines implemented (identity, weight, timeline)
+- [x] TriNetra multi-source reconciliation working
+- [x] Evaluation module calculates all metrics
+- [x] Ablation study completed
+- [x] Phase 1 Results Report written
+- [x] Code is reproducible (anyone can re-run and get same results)
+
+## What Happens at STOP
+
+1. Antigravity completes Phase 1
+2. Antigravity generates Phase 1 Results Report
+3. Antigravity STOPS and waits for approval
+4. **DO NOT** proceed to Phase 2 automatically
+5. **DO NOT** build backend, frontend, APIs, LLM, or production infrastructure
+6. **WAIT** for explicit approval from project leadership
+
+## What the Results Report Should Contain
+
+```
+PHASE_1_RESULTS.md
+
+## Executive Summary
+- Did multi-source reconciliation outperform baselines? YES/NO
+- What was the FN reduction percentage?
+- Is improvement statistically significant (p < 0.05)? YES/NO
+
+## Methodology
+- Dataset size: 1000 cases
+- Conflict distribution: 900 normal, 100 conflict
+- Baselines tested: Identity-only, Weight-only, Timeline-only
+- Comparison: Each baseline vs. TriNetra multi-source
+
+## Results
+
+### Baseline 1 (Identity-only):
+  Precision: X
+  Recall: Y
+  F1: Z
+  FPR: A
+  FNR: B
+
+### Baseline 2 (Weight-only):
+  Precision: X
+  Recall: Y
+  F1: Z
+  FPR: A
+  FNR: B
+
+### Baseline 3 (Timeline-only):
+  Precision: X
+  Recall: Y
+  F1: Z
+  FPR: A
+  FNR: B
+
+### TriNetra (Multi-source):
+  Precision: X
+  Recall: Y
+  F1: Z
+  FPR: A
+  FNR: B
+
+### Comparison:
+  FN Reduction: (Baseline_FNR - TriNetra_FNR) / Baseline_FNR = X%
+  Statistical significance: p-value = Y (< 0.05 ✓ or > 0.05 ✗)
+
+## Ablation Study
+  Identity only: FNR = X%
+  Identity + Weight: FNR = Y%
+  Identity + Timeline: FNR = Z%
+  Full reconciliation: FNR = W%
+  
+  Conclusion: Which component contributed most?
+
+## Error Analysis
+  False Positives: N cases
+    - Pattern: [describe false positive patterns]
+  
+  False Negatives: N cases
+    - Pattern: [describe missed conflicts]
+  
+  Confidence Calibration:
+    - When confidence score is high, is prediction actually correct?
+
+## Conclusion
+Hypothesis supported: YES / NO
+Next steps recommended: Phase 2 / Further investigation / Pivot
+
+## Deliverables Generated
+- [x] schema.sql
+- [x] synthetic_evidence.csv (1000 cases)
+- [x] ground_truth.csv
+- [x] predictions.csv (baseline + TriNetra predictions)
+- [x] metrics.csv
+- [x] confusion_matrices.json
+- [x] ablation_results.csv
+- [x] error_analysis.md
+- [x] Code reproducibility instructions
+```
+
+## Approval Process
+
+Before proceeding to Phase 2, get approval from:
+
+1. **Technical Lead:** Reviews methodology, reproducibility, statistical rigor
+2. **Product Manager:** Reviews whether results support business hypothesis
+3. **Research Lead:** Reviews whether results are publishable
+4. **Data Science Lead:** Reviews evaluation metrics and error analysis
+
+Questions approval must answer:
+- Are results reproducible? Can someone else run the code and get same results?
+- Are metrics calculated correctly?
+- Is the hypothesis actually supported by the data?
+- What are the limitations?
+- What should we do next?
+
+## What NOT to Do After Phase 1
+
+❌ Do NOT automatically start Phase 2
+❌ Do NOT build React dashboard
+❌ Do NOT create REST APIs
+❌ Do NOT integrate with real e-commerce systems
+❌ Do NOT claim "TriNetra solved e-commerce fraud"
+❌ Do NOT use LLM to explain results
+❌ Do NOT deploy to production
+❌ Do NOT proceed without explicit approval
+
+## What CAN happen after approval
+
+Once Phase 1 results are reviewed and approved:
+- ✅ Proceed to Phase 2 (Evidence Prototype)
+- ✅ Plan Phase 3+ based on Phase 1 findings
+- ✅ Prepare research paper materials
+- ✅ Discuss deployment strategy with stakeholders
+
+**But not before explicit approval.**
+```
+
+**Why:** Antigravity must know that Phase 1 is a research validation, not the start of automatic development. The STOP condition prevents scope creep.
+
+---
+
+## DOCUMENT 8: FINAL IMPLEMENTATION README
+### (Provide this EIGHTH - Tie everything together)
+
+**File to prepare:** `PHASE_1_IMPLEMENTATION_README.md`
+
+**What it should contain:**
+
+```markdown
+# TriNetra AI: Phase 1 Implementation README
+
+## Quick Reference: What to Build
+
+### 8 Components (In This Order)
+
+1. **PostgreSQL Schema** (Week 1)
+   - Files: schema.sql, tables.sql, indexes.sql
+   - Purpose: Store evidence, entity resolution, predictions, ground truth
+
+2. **Normalization Engine** (Week 1)
+   - Files: canonical_normalizer.py, sku_normalizer.py, weight_normalizer.py, etc.
+   - Purpose: Convert "TS-204", "500g", "XL" → canonical forms
+
+3. **Entity Resolver** (Week 2)
+   - Files: entity_resolver.py
+   - Purpose: Map Seller's ID + Warehouse's ID → Canonical Product ID
+
+4. **Synthetic Data Generator** (Week 2)
+   - Files: synthetic_generator.py, conflict_injector.py
+   - Purpose: Create 1000 product lifecycles with known ground truth
+
+5. **Reconciliation Engine** (Week 3)
+   - Files: reconciliation_engine.py, identity_checker.py, weight_detector.py, timeline_validator.py
+   - Purpose: Detect conflicts using deterministic + statistical logic
+
+6. **Three Baselines** (Week 3)
+   - Files: baseline_1_identity.py, baseline_2_weight.py, baseline_3_timeline.py
+   - Purpose: Single-source verification methods (for comparison)
+
+7. **Evaluation Module** (Week 4)
+   - Files: evaluator.py, metrics.py, confusion_matrix.py
+   - Purpose: Calculate precision, recall, F1, FPR, FNR, FN reduction
+
+8. **Results Analysis** (Week 5)
+   - Files: ablation_study.py, error_analysis.py
+   - Purpose: Understand what worked and what didn't
+
+### Timeline
+- Week 1: Schema + Normalization
+- Week 2: Entity Resolution + Generator
+- Week 3: Baselines + Reconciliation
+- Week 4: Evaluation + Ablation
+- Week 5: Analysis + Documentation
+- Week 6: Validation + Final Report
+
+### Success Criteria (MUST ALL BE TRUE)
+- FN Reduction > 15% (p < 0.05)
+- Precision ≥ 0.80
+- Recall ≥ 0.75
+- F1 ≥ 0.77
+- FPR ≤ 0.15
+- Results reproducible
+- Code documented
+
+### After Phase 1 Completes
+STOP. Generate Phase 1 Results Report. Wait for approval before Phase 2.
+
+## Repository Structure
+
+```
+phase-1/
+├── schema/
+├── generator/
+├── normalization/
+├── resolution/
+├── engine/
+├── baselines/
+├── evaluation/
+├── data/
+├── results/
+├── tests/
+└── README.md
+```
+
+## Critical Documents (Reference While Building)
+
+- PROJECT_CONTEXT.md (Why we're doing this)
+- PHASE_1_SCOPE.md (What's included/excluded)
+- EVIDENCE_TAXONOMY.md (Evidence structure)
+- CONFLICT_TAXONOMY.md (Conflict detection rules)
+- EVALUATION_METRICS.md (Success criteria)
+- SYNTHETIC_DATA_SPEC.md (Data generation)
+- PHASE_1_STOP_CONDITION.md (When to stop)
+
+## Testing During Development
+
+- Unit tests for normalizer (handles edge cases)
+- Unit tests for entity resolver (correct ID mapping)
+- Unit tests for reconciliation engine (correct conflict detection)
+- End-to-end test with 100 synthetic cases (full pipeline)
+- Final test with all 1000 cases (full evaluation)
+
+## Reproducibility Checklist
+
+After Phase 1 is done, verify:
+- [ ] All code uses fixed random seed (seed=42)
+- [ ] Anyone can run: `python generate_and_evaluate.py` and get identical results
+- [ ] Metrics are reproducible to 2 decimal places
+- [ ] Confusion matrices match between runs
+- [ ] Documentation explains every decision
+
+## Questions During Development
+
+If Antigravity has questions:
+- Reference EVIDENCE_TAXONOMY.md (What's an evidence source?)
+- Reference CONFLICT_TAXONOMY.md (How do I detect this conflict?)
+- Reference EVALUATION_METRICS.md (How do I calculate this metric?)
+- Reference SYNTHETIC_DATA_SPEC.md (How do I generate this case?)
+
+If answers aren't in these documents, escalate to project leadership.
+
+## ABSOLUTE RULES (DON'T BREAK THESE)
+
+1. **Never invent evidence** - Only use synthetic data with known ground truth
+2. **No LLM** - Phase 1 is deterministic + statistical only
+3. **No fabricated results** - If baselines win, document it honestly
+4. **Reproducible** - Anyone else should get identical results with same seed
+5. **Stop after Phase 1** - Don't build Phase 2 without approval
+6. **No scope creep** - No React, APIs, authentication, production infrastructure
+
+These are non-negotiable.
+```
+
+**Why:** Antigravity needs a quick reference guide during development. Everything should trace back to these documents.
+
+---
+
+## HOW TO PROVIDE ALL DOCUMENTS TO ANTIGRAVITY
+
+### Option 1: Sequential Prompts (Recommended)
+
+Provide documents **one at a time** in this order:
+
+```
+Prompt 1: "Read and understand the attached PROJECT_CONTEXT.md. 
+          Confirm you understand the hypothesis, success metrics, 
+          and absolute rules. Do not start building yet."
+
+Prompt 2: "Read and understand the attached PHASE_1_SCOPE.md. 
+          Confirm you understand what you WILL and WON'T build. 
+          Do not start building yet."
+
+Prompt 3: "Read and understand the attached EVIDENCE_TAXONOMY.md.
+          Confirm you understand the 8 evidence sources and 
+          normalization rules. Do not start building yet."
+
+Prompt 4: "Read and understand the attached CONFLICT_TAXONOMY.md.
+          Confirm you understand the 5 conflict types and how to 
+          detect them. Do not start building yet."
+
+Prompt 5: "Read and understand the attached EVALUATION_METRICS.md.
+          Confirm you understand the success metrics and formulas. 
+          Do not start building yet."
+
+Prompt 6: "Read and understand the attached SYNTHETIC_DATA_SPEC.md.
+          Confirm you understand the data generation specification. 
+          Do not start building yet."
+
+Prompt 7: "Read and understand the attached PHASE_1_STOP_CONDITION.md.
+          Confirm you understand that you MUST STOP after Phase 1 
+          and wait for approval. Do not start building yet."
+
+Prompt 8: "Now you have all the specifications. Begin Phase 1 
+          implementation. Start with Week 1: PostgreSQL Schema + 
+          Normalization Engine. After each week, report progress."
+
+Final Prompt: "Phase 1 is complete. Generate the Phase 1 Results Report 
+             following the PHASE_1_STOP_CONDITION.md template. Then STOP 
+             and wait for approval before Phase 2."
+```
+
+### Option 2: Bulk Upload (If Antigravity supports it)
+
+Provide all 8 documents at once with explicit instructions:
+
+```
+Instruction: "You have 8 specification documents for TriNetra AI Phase 1.
+
+Read them in this order:
+1. PROJECT_CONTEXT.md
+2. PHASE_1_SCOPE.md
+3. EVIDENCE_TAXONOMY.md
+4. CONFLICT_TAXONOMY.md
+5. EVALUATION_METRICS.md
+6. SYNTHETIC_DATA_SPEC.md
+7. PHASE_1_STOP_CONDITION.md
+8. PHASE_1_IMPLEMENTATION_README.md
+
+After reading all documents, confirm you understand:
+- The research hypothesis
+- The 8 components to build
+- The 5 conflict types to detect
+- The success metrics
+- The stop condition
+
+Then begin implementation in this order:
+Week 1: PostgreSQL Schema + Normalization
+Week 2: Entity Resolution + Synthetic Data
+Week 3: Baselines + Reconciliation
+Week 4: Evaluation + Ablation
+Week 5: Analysis + Documentation
+
+After Phase 1 is complete, generate the Phase 1 Results Report 
+and STOP. Do not proceed to Phase 2 without explicit approval."
+```
+
+---
+
+## SUMMARY: WHAT TO PROVIDE TO ANTIGRAVITY
+
+| # | Document | Content | Length |
+|---|---|---|---|
+| 1 | PROJECT_CONTEXT.md | Why, hypothesis, metrics, rules | 1-2 pages |
+| 2 | PHASE_1_SCOPE.md | What to build, what not to build | 2-3 pages |
+| 3 | EVIDENCE_TAXONOMY.md | 8 evidence sources, normalization rules | 2-3 pages |
+| 4 | CONFLICT_TAXONOMY.md | 5 conflict types, detection rules | 2-3 pages |
+| 5 | EVALUATION_METRICS.md | Success metrics, formulas, targets | 2-3 pages |
+| 6 | SYNTHETIC_DATA_SPEC.md | Data generation, 5 conflict cases | 3-4 pages |
+| 7 | PHASE_1_STOP_CONDITION.md | STOP rule, approval process | 1-2 pages |
+| 8 | PHASE_1_IMPLEMENTATION_README.md | Quick reference guide | 1-2 pages |
+
+**Total: ~18-23 pages of crystal-clear specifications**
+
+---
+
+## CRITICAL: Antigravity Must Understand
+
+Before starting, confirm that Antigravity understands:
+
+1. ✅ **This is research validation**, not production product
+2. ✅ **PostgreSQL + Python only**, no React/APIs/LLM/microservices
+3. ✅ **1000 synthetic cases with known ground truth**, not real data
+4. ✅ **4-6 weeks of implementation**, then STOP
+5. ✅ **Success metric is FN reduction > 15%**, not "build everything"
+6. ✅ **Reproducibility is critical**, use fixed random seed
+7. ✅ **Stop condition is non-negotiable**, don't auto-proceed to Phase 2
+8. ✅ **No LLM usage in Phase 1**, deterministic + statistical only
+
+---
+
+## Final Checklist Before Giving to Antigravity
+
+- [ ] Have you created all 8 documents?
+- [ ] Have you read them yourself (to catch errors)?
+- [ ] Have you removed any typos or unclear sections?
+- [ ] Have you confirmed Phase 1 scope is realistic for 4-6 weeks?
+- [ ] Have you confirmed success metrics are achievable?
+- [ ] Have you confirmed stop condition is explicit?
+- [ ] Do the documents reference each other correctly?
+- [ ] Is the language clear and unambiguous?
+
+If all 8 are ready, you're set to provide them to Antigravity.
+
+**Good luck with Phase 1! 🚀**

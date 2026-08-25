@@ -1,0 +1,1313 @@
+# TriNetra AI
+
+## Full Phase-by-Phase Implementation README
+
+Version: 1.0
+Status: Research and Development
+Primary Objective: Build and experimentally validate the TriNetra evidence reconciliation framework before expanding into a production-oriented platform.
+
+---
+
+# 1. Project Objective
+
+TriNetra AI investigates whether independently generated evidence from different e-commerce stakeholders can be normalized, connected through a common product identity, and reconciled to identify inconsistencies across the product lifecycle.
+
+The system is designed around:
+
+```text
+Marketplace
+    ↓
+Seller
+    ↓
+Warehouse / Fulfillment
+    ↓
+Packaging
+    ↓
+Logistics
+    ↓
+Delivery
+    ↓
+Return
+    ↓
+Dispute
+```
+
+The system must not automatically accuse a customer, seller, warehouse, or carrier of fraud.
+
+TriNetra identifies observable inconsistencies and produces evidence-backed recommendations for verification or human review.
+
+The primary research question is:
+
+> Can multi-source, cross-organizational evidence reconciliation reduce false negatives compared with single-source verification?
+
+---
+
+# 2. Implementation Philosophy
+
+The project will be developed incrementally.
+
+Do not build the production platform first.
+
+The implementation order is:
+
+```text
+Research Foundation
+        ↓
+Phase 1 Research MVP
+        ↓
+Phase 2 Evidence Intelligence Prototype
+        ↓
+Phase 3 Application Backend
+        ↓
+Phase 4 Explainability
+        ↓
+Phase 5 Dashboard
+        ↓
+Phase 6 External Integration
+        ↓
+Phase 7 Privacy and Security
+        ↓
+Phase 8 Production Hardening
+        ↓
+Phase 9 Real-World Validation
+```
+
+Every phase must produce a usable artifact before the next phase begins.
+
+Do not implement features merely because they sound technically impressive.
+
+Every feature must map to:
+
+1. A research question.
+2. A system requirement.
+3. A measurable outcome.
+
+---
+
+# 3. Phase 0: Project and Research Foundation
+
+## Objective
+
+Freeze the research methodology before implementation.
+
+## Tasks
+
+### 3.1 Repository Setup
+
+Create:
+
+```text
+trinetra-ai/
+├── research/
+├── phase-1/
+├── phase-2/
+├── backend/
+├── frontend/
+├── docs/
+├── data/
+├── experiments/
+└── README.md
+```
+
+### 3.2 Research Specification
+
+Create:
+
+```text
+docs/RESEARCH_SPECIFICATION.md
+```
+
+Include:
+
+```text
+Problem Statement
+Research Question
+Hypotheses
+Research Objectives
+Scope
+Out of Scope
+Evidence Model
+Conflict Taxonomy
+Baselines
+Evaluation Metrics
+Experimental Design
+Limitations
+```
+
+### 3.3 Freeze Research Variables
+
+Define the evidence sources:
+
+```text
+ORDER
+SELLER
+MARKETPLACE
+WAREHOUSE
+PACKAGING
+CARRIER
+DELIVERY
+RETURN
+```
+
+Define conflict types:
+
+```text
+IDENTITY_CONFLICT
+ATTRIBUTE_CONFLICT
+WEIGHT_ANOMALY
+TEMPORAL_CONFLICT
+MISSING_EVIDENCE
+DUPLICATE_EVIDENCE
+MULTI_SOURCE_CONFLICT
+```
+
+### 3.4 Freeze Evaluation
+
+At minimum:
+
+```text
+Precision
+Recall
+F1 Score
+False Positive Rate
+False Negative Rate
+False Negative Reduction
+```
+
+### Phase 0 Output
+
+```text
+Research specification
+Project repository
+Evidence taxonomy
+Conflict taxonomy
+Experiment specification
+```
+
+---
+
+# 4. Phase 1: Research MVP
+
+## Objective
+
+Test the core TriNetra hypothesis without building UI, APIs, LLM services, or production infrastructure.
+
+This is the most important research phase.
+
+The output should be suitable for the methodology and results sections of the research paper.
+
+## Phase 1 Architecture
+
+```text
+Synthetic Lifecycle Generator
+        ↓
+Canonical Normalization
+        ↓
+Entity Resolution
+        ↓
+PostgreSQL
+        ↓
+Reconciliation Engine
+        ↓
+Baseline Detectors
+        ↓
+TriNetra Multi-Source Detector
+        ↓
+Evaluation Engine
+        ↓
+Results
+```
+
+---
+
+## 4.1 PostgreSQL Research Schema
+
+Create:
+
+```text
+entity_resolution
+evidence_record
+evidence_attribute
+```
+
+### `entity_resolution`
+
+Purpose:
+
+Map organization-specific identifiers to a canonical product/entity.
+
+Store:
+
+```text
+entity_resolution_id
+canonical_entity_id
+source_organization
+source_system
+source_entity_id
+entity_type
+normalized_identifier
+resolution_method
+resolution_confidence
+created_at
+```
+
+### `evidence_record`
+
+Purpose:
+
+Represent one event or evidence submission.
+
+Store:
+
+```text
+evidence_id
+canonical_entity_id
+order_id
+source_organization
+source_system
+event_type
+event_timestamp
+evidence_type
+provenance
+created_at
+```
+
+### `evidence_attribute`
+
+Purpose:
+
+Store normalized attributes attached to an evidence record.
+
+Store:
+
+```text
+attribute_id
+evidence_id
+attribute_name
+canonical_attribute_name
+original_value
+normalized_value
+unit
+data_type
+confidence
+```
+
+The database must preserve both the original value and normalized value.
+
+Example:
+
+```text
+Original:
+"Extra Large"
+
+Normalized:
+"XL"
+```
+
+---
+
+## 4.2 Canonical Normalization
+
+Implement normalization for:
+
+```text
+SKU
+Product ID
+Variant
+Size
+Color
+Weight
+Timestamp
+Serial Number
+Batch ID
+Status
+```
+
+Example:
+
+```text
+"0.5 kg"
+"500g"
+"500 grams"
+```
+
+must resolve to:
+
+```text
+500 g
+```
+
+Do not modify original evidence.
+
+Normalization creates a comparable representation while retaining provenance.
+
+---
+
+## 4.3 Entity Resolution
+
+Map records from different organizations to a common entity.
+
+Example:
+
+```text
+Seller:
+SELLER-991
+
+Warehouse:
+WH-20491
+
+Carrier:
+PKG-8821
+
+Canonical:
+PROD-001
+```
+
+The system should record:
+
+```text
+resolution_confidence
+resolution_method
+source identifiers
+canonical identifier
+```
+
+No probabilistic entity resolution is required initially if deterministic identifiers are available.
+
+---
+
+## 4.4 Synthetic Lifecycle Generator
+
+Generate complete order lifecycles.
+
+Normal lifecycle:
+
+```text
+ORDER
+→ SELLER
+→ WAREHOUSE
+→ PACKAGING
+→ CARRIER
+→ DELIVERY
+→ RETURN
+```
+
+Each event produces evidence.
+
+Generate:
+
+```text
+Normal cases
+Identity conflicts
+Weight anomalies
+Temporal conflicts
+Missing evidence
+Multiple conflicts
+```
+
+Each generated case must contain explicit ground truth.
+
+Example:
+
+```text
+case_id
+ground_truth
+injected_conflict
+difficulty
+evidence_completeness
+```
+
+---
+
+## 4.5 Layer 1: Data Integrity Tests
+
+Test deterministic problems.
+
+Examples:
+
+```text
+SKU mismatch
+Product ID mismatch
+Variant mismatch
+Invalid timestamp
+Missing required evidence
+Duplicate evidence
+Invalid units
+Broken entity mapping
+```
+
+These establish system correctness.
+
+Do not report these simple equality checks as evidence of advanced machine learning.
+
+---
+
+## 4.6 Layer 2: Anomaly Detection
+
+Implement statistical detection for:
+
+```text
+Weight anomalies
+Unexpected measurement deviations
+Multiple weak inconsistencies
+Temporal irregularities
+Evidence completeness anomalies
+```
+
+Weight anomaly detection must account for:
+
+```text
+Product weight
+Packaging weight
+Measurement error
+Expected operational variance
+```
+
+Do not hard-code an arbitrary threshold without justification.
+
+---
+
+## 4.7 Baselines
+
+Implement independent detectors.
+
+### Baseline 1
+
+Order-to-warehouse identity check.
+
+### Baseline 2
+
+Weight-only detector.
+
+### Baseline 3
+
+Timeline-only detector.
+
+### Baseline 4
+
+Individual evidence source detector.
+
+### TriNetra
+
+Multi-source reconciliation.
+
+```text
+Identity
++
+Weight
++
+Timeline
++
+Evidence completeness
++
+Cross-source relationships
+```
+
+The main comparison is:
+
+```text
+Single-source detection
+        VS
+Multi-source reconciliation
+```
+
+---
+
+## 4.8 Phase 1 Evaluation
+
+Run experiments across:
+
+```text
+Normal
+Low conflict
+Medium conflict
+High conflict
+```
+
+and:
+
+```text
+100% evidence
+75% evidence
+50% evidence
+25% evidence
+```
+
+Measure:
+
+```text
+Precision
+Recall
+F1
+False Positive Rate
+False Negative Rate
+False Negative Reduction
+```
+
+The primary research metric is:
+
+```text
+False Negative Reduction
+```
+
+Formula:
+
+```text
+FNR Reduction =
+(Baseline False Negatives - TriNetra False Negatives)
+/
+Baseline False Negatives
+```
+
+---
+
+## 4.9 Phase 1 Required Outputs
+
+```text
+phase-1/
+├── schema/
+├── generator/
+├── engine/
+├── baselines/
+├── evaluation/
+├── data/
+└── results/
+```
+
+Expected outputs:
+
+```text
+schema.sql
+synthetic_evidence.csv
+ground_truth.csv
+predictions.csv
+metrics.csv
+confusion_matrix.csv
+conflict_analysis.csv
+experiment_summary.md
+```
+
+No UI.
+
+No production APIs.
+
+No LLM.
+
+No Redis.
+
+No microservices.
+
+---
+
+# 5. Phase 2: Evidence Intelligence Prototype
+
+## Objective
+
+Turn the research engine into a reusable application service while preserving deterministic research logic.
+
+## Tasks
+
+### 5.1 Evidence Ingestion Layer
+
+Build structured evidence ingestion.
+
+Inputs:
+
+```text
+Order
+Seller
+Warehouse
+Carrier
+Return Center
+```
+
+Validate:
+
+```text
+Schema
+Types
+Required fields
+Timestamps
+Units
+Identifiers
+Provenance
+```
+
+### 5.2 Evidence Registry
+
+Create persistent storage for:
+
+```text
+Evidence
+Source
+Organization
+Entity
+Event
+Attribute
+Provenance
+```
+
+### 5.3 Reconciliation Service
+
+Expose:
+
+```text
+Identity consistency
+Weight consistency
+Temporal consistency
+Evidence completeness
+Cross-source conflicts
+```
+
+### 5.4 Case Model
+
+Create:
+
+```text
+Case
+Evidence
+Conflict
+Recommendation
+Review
+Audit event
+```
+
+### 5.5 Human Review Interface Contract
+
+Define structured review outcomes:
+
+```text
+APPROVE
+VERIFY
+ESCALATE
+REJECT
+```
+
+The engine provides evidence.
+
+The human provides the final operational decision.
+
+---
+
+# 6. Phase 3: Backend Application
+
+## Objective
+
+Build the production-oriented application backend.
+
+Recommended stack:
+
+```text
+Java
+Spring Boot
+PostgreSQL
+Redis
+Docker
+```
+
+## Services
+
+Initially keep the architecture modular rather than immediately creating many microservices.
+
+Modules:
+
+```text
+Evidence Module
+Entity Resolution Module
+Reconciliation Module
+Risk Module
+Case Module
+Audit Module
+Reporting Module
+```
+
+Create REST APIs for:
+
+```text
+POST /evidence
+GET /cases/{id}
+GET /cases/{id}/evidence
+GET /cases/{id}/conflicts
+GET /cases/{id}/reconciliation
+GET /cases/{id}/recommendation
+POST /cases/{id}/review
+GET /cases/{id}/audit
+```
+
+Only split into independent microservices if actual scaling or deployment requirements justify it.
+
+---
+
+# 7. Phase 4: Explainability
+
+## Objective
+
+Convert structured reconciliation results into understandable explanations.
+
+The rule is:
+
+> The explanation layer may explain evidence. It may not invent evidence.
+
+Pipeline:
+
+```text
+Evidence
+↓
+Deterministic checks
+↓
+Structured conflict objects
+↓
+Explanation template
+↓
+Optional LLM language refinement
+↓
+Validation
+↓
+Final explanation
+```
+
+Example:
+
+```text
+Conflict:
+Warehouse weight = 900g
+Carrier weight = 905g
+Return weight = 200g
+```
+
+Explanation:
+
+> The outbound warehouse and carrier measurements are consistent, while the return measurement differs significantly. Additional verification is recommended because the evidence indicates a possible product or package change after initial dispatch.
+
+The LLM must never create unsupported evidence.
+
+---
+
+# 8. Phase 5: Application Dashboard
+
+## Objective
+
+Create the operational interface.
+
+Recommended frontend:
+
+```text
+React
+Vite
+```
+
+## Dashboard
+
+Display:
+
+```text
+Total cases
+Open cases
+Verification required
+Resolved cases
+Evidence conflicts
+```
+
+## Case Page
+
+Display:
+
+```text
+Order
+Product
+Seller
+Evidence sources
+Timeline
+Conflicts
+Reconciliation result
+Recommendation
+Explanation
+```
+
+## Evidence Timeline
+
+```text
+Order
+↓
+Seller
+↓
+Warehouse
+↓
+Carrier
+↓
+Delivery
+↓
+Return
+```
+
+## Review Panel
+
+Allow authorized users to:
+
+```text
+Approve
+Request Verification
+Escalate
+Reject
+Add Review Note
+```
+
+---
+
+# 9. Phase 6: Physical Product Identity and TAG Layer
+
+## Objective
+
+Connect the physical product with the digital evidence chain.
+
+The TAG is an identity anchor.
+
+It is not the research novelty.
+
+Support:
+
+```text
+QR
+Barcode
+Serialized identifier
+RFID-derived identifier
+```
+
+For garments or other products, prototype with a QR/serialized identifier.
+
+Store:
+
+```text
+product_id
+tag_id
+sku
+variant
+batch
+seller
+order
+```
+
+The TAG should not expose customer PII.
+
+---
+
+# 10. Phase 7: Pre-Dispatch Verification
+
+## Objective
+
+Move evidence reconciliation earlier in the lifecycle.
+
+Example:
+
+```text
+Order:
+SKU = TS204
+Size = XL
+
+Warehouse:
+SKU = TS204
+Size = L
+```
+
+TriNetra:
+
+```text
+IDENTITY CONFLICT
+→ Verification Required
+→ Dispatch Hold Recommendation
+```
+
+Other checks:
+
+```text
+SKU
+Size
+Color
+Batch
+Tag
+Weight
+Packaging
+Seal status
+Timestamp
+```
+
+This phase investigates whether cross-source reconciliation can catch a problem before customer delivery.
+
+---
+
+# 11. Phase 8: Multimodal Evidence
+
+Only implement after the structured-data engine is stable.
+
+## Computer Vision
+
+Potential tasks:
+
+```text
+Product image similarity
+Packaging inspection
+Seal detection
+Damage detection
+Product variant verification
+```
+
+Compare:
+
+```text
+Catalog image
+vs
+Warehouse image
+```
+
+and later:
+
+```text
+Outbound image
+vs
+Return image
+```
+
+Results should become another evidence source, not an automatic fraud verdict.
+
+---
+
+# 12. Phase 9: Privacy and Security
+
+Implement:
+
+```text
+TLS
+Authentication
+Authorization
+Tenant isolation
+Data minimization
+Encryption
+Audit logging
+Evidence provenance
+```
+
+Research advanced privacy mechanisms later.
+
+Potential future capability:
+
+```text
+Cryptographic commitments
+```
+
+But do not introduce cryptography simply to make the architecture look advanced.
+
+The current documentation correctly treats privacy commitments as a later phase. 
+
+---
+
+# 13. Phase 10: External Stakeholder Integration
+
+Build adapters for:
+
+```text
+Marketplace
+Seller
+Warehouse / 3PL
+Carrier
+Return Center
+```
+
+Each integration translates its own format into the canonical TriNetra evidence schema.
+
+```text
+External system
+↓
+Adapter
+↓
+Normalization
+↓
+Entity resolution
+↓
+Evidence registry
+```
+
+TriNetra should not require every stakeholder to replace their existing system.
+
+---
+
+# 14. Phase 11: Audit and Governance
+
+Record:
+
+```text
+Evidence submitted
+Evidence modified
+Normalization performed
+Conflict detected
+Recommendation generated
+Human review
+Final decision
+Override
+```
+
+Every decision must be reproducible.
+
+No silent modification of historical evidence.
+
+---
+
+# 15. Phase 12: Production Hardening
+
+Implement:
+
+```text
+Unit testing
+Integration testing
+Load testing
+Failure recovery
+Database backups
+Observability
+Structured logging
+Metrics
+Security testing
+CI/CD
+Docker deployment
+```
+
+Performance targets from the existing technical specification can be evaluated here rather than assumed beforehand. 
+
+---
+
+# 16. Phase 13: Real-World Validation
+
+This is where research claims become stronger.
+
+Compare:
+
+```text
+Baseline workflow
+vs
+TriNetra workflow
+```
+
+Measure:
+
+```text
+False negatives
+False positives
+Resolution time
+Evidence requests
+Human review time
+Conflict detection
+Customer burden
+```
+
+Perform:
+
+```text
+Ablation study
+Sensitivity analysis
+Error analysis
+Robustness testing
+```
+
+Example ablation:
+
+```text
+Weight only
+Weight + Timeline
+Weight + Identity
+Weight + Identity + Timeline
+All evidence sources
+```
+
+This shows which evidence sources actually contribute to performance.
+
+---
+
+# 17. Phase 14: Research Paper
+
+The final paper should be built from actual results.
+
+Structure:
+
+```text
+1. Abstract
+2. Introduction
+3. Problem Definition
+4. Related Work
+5. Research Gap
+6. Proposed Framework
+7. Data Model
+8. Reconciliation Method
+9. Experimental Methodology
+10. Baselines
+11. Results
+12. Ablation Study
+13. Discussion
+14. Limitations
+15. Conclusion
+```
+
+Do not write final numerical claims until experiments are complete.
+
+The earlier project documentation already identifies the paper as a major deliverable, but its stated performance figures must be replaced by measured results where appropriate. 
+
+---
+
+# 18. Phase Dependencies
+
+```text
+Phase 0
+Research specification
+        ↓
+Phase 1
+Research MVP
+        ↓
+Phase 2
+Evidence intelligence prototype
+        ↓
+Phase 3
+Backend
+        ↓
+Phase 4
+Explainability
+        ↓
+Phase 5
+Dashboard
+        ↓
+Phase 6
+Product identity
+        ↓
+Phase 7
+Pre-dispatch verification
+        ↓
+Phase 8
+Multimodal evidence
+        ↓
+Phase 9
+Privacy
+        ↓
+Phase 10
+External integration
+        ↓
+Phase 11
+Governance
+        ↓
+Phase 12
+Production hardening
+        ↓
+Phase 13
+Real-world validation
+        ↓
+Phase 14
+Final research paper
+```
+
+Do not skip Phase 1.
+
+Phase 1 determines whether the core research hypothesis deserves the rest of the investment.
+
+---
+
+# 19. Team Allocation
+
+For a four-person team:
+
+### Member 1: Research and Literature
+
+Responsible for:
+
+```text
+Literature dataset
+Research gap
+Related work
+Citation management
+Paper writing
+```
+
+### Member 2: Data and Experimentation
+
+Responsible for:
+
+```text
+Synthetic generator
+Ground truth
+Baselines
+Evaluation
+Statistics
+Research figures
+```
+
+### Member 3: Backend and Database
+
+Responsible for:
+
+```text
+PostgreSQL
+Entity resolution
+Evidence model
+Reconciliation engine
+Backend services
+```
+
+### Member 4: Frontend and Product
+
+Responsible for:
+
+```text
+Dashboard
+Case visualization
+Evidence timeline
+Human review interface
+Product UX
+```
+
+You should own the overall architecture and research-method alignment.
+
+---
+
+# 20. Phase Completion Rules
+
+A phase is complete only when its exit criteria are satisfied.
+
+### Phase 1
+
+Complete when:
+
+```text
+Schema works
++
+Synthetic data generated
++
+Ground truth generated
++
+Baselines implemented
++
+TriNetra engine implemented
++
+Evaluation completed
++
+Results reproducible
+```
+
+### Phase 2
+
+Complete when:
+
+```text
+Research engine
+→ reusable evidence service
+```
+
+### Phase 3
+
+Complete when:
+
+```text
+Backend
+→ stable APIs
+```
+
+And so on.
+
+Never move forward because the code “looks finished.”
+
+---
+
+overall phases details.

@@ -1,0 +1,5 @@
+Configuration,TP,FP,TN,FN,Precision,Recall,F1_Score,FPR,FNR
+L1_Identity_Only,40,0,905,55,1.0,0.4211,0.5926,0.0,0.5789
+L2_Identity_Weight,80,0,905,15,1.0,0.8421,0.9143,0.0,0.1579
+L3_Identity_Timeline,55,0,905,40,1.0,0.5789,0.7333,0.0,0.4211
+L4_Full_Reconciliation,95,0,905,0,1.0,1.0,1.0,0.0,0.0

@@ -1,0 +1,20 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: integration-service
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/trinetra}
+    username: ${POSTGRES_USER:trinetra_user}
+    password: ${POSTGRES_PASSWORD:trinetra_dev_pass}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:trinetra_admin}
+    password: ${RABBITMQ_PASS:trinetra_rabbit_pass}

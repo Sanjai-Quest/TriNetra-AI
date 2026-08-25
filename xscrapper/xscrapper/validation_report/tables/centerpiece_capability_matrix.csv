@@ -1,0 +1,15 @@
+﻿Capability,Research Papers,Existing Commercial Platforms,Research Gap,TriNetra AI
+Fraud Detection,✓,✓,Isolated transaction classification; lacks physical evidence integration,✓
+Return Policy Optimization,✓,Partial,Policies are static; fail to dynamically adjust friction per risk profile,✓
+Reverse Logistics,✓,✓,Logistics routing decoupled from fraud risk & physical evidence verification,Partial
+Consumer Trust Analysis,✓,Limited,Survey-based conceptual models lacking real-time evidence dispute engine,✓
+Seller Trust Analysis,Rare,✗,"Neglects seller fraud, counterfeit listings, and abusive return rejections",✓
+Explainable Decisions,Partial,✗,Black-box decision models; fail to provide human-readable rationale,✓
+Evidence Aggregation,Rare,Limited,"Lacks unified ingestion of customer photos, carrier scans, & weights",✓
+Evidence Consistency,Rare,✗,No algorithmic cross-verification of multi-modal physical evidence,✓
+Cross-Stakeholder Evidence Fusion,✗,✗,"Buyer, seller, carrier, and warehouse data isolated in operational silos",✓
+Adaptive Verification,Rare,Limited,Uniform verification friction penalizes honest buyers & misses fraud,✓
+Human-in-the-Loop Review,Rare,Limited,High manual agent workload without transparent AI evidence summarization,✓
+Case Timeline Reconstruction,Partial,Limited,Simple order status tracking; lacks immutable dispute lifecycle logging,✓
+Decision Support,Partial,Partial,Binary approve/deny rules without risk-proportional action guidance,✓
+End-to-End Case Resolution,✗,Partial,Fragmented tools: logistics separate from fraud scoring & governance,✓

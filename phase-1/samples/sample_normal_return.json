@@ -1,0 +1,59 @@
+{
+  "order": {
+    "order_id": "ORD-9912",
+    "product_id": "PROD-TS204",
+    "sku": "TS-204",
+    "size": "XL",
+    "color": "BLACK",
+    "order_timestamp": "2026-08-23T10:00:00Z"
+  },
+  "evidence": [
+    {
+      "source": "SELLER",
+      "organization_id": "SELLER-APPAREL",
+      "event_type": "PRODUCT_DISPATCH",
+      "timestamp": "2026-08-23T10:15:00Z",
+      "attributes": {
+        "sku": "TS-204",
+        "size": "Extra Large",
+        "color": "bright black",
+        "weight_grams": "500g"
+      }
+    },
+    {
+      "source": "WAREHOUSE",
+      "organization_id": "WH-DELHI-02",
+      "event_type": "PACKING_INSPECTION",
+      "timestamp": "2026-08-23T11:00:00Z",
+      "attributes": {
+        "sku": "ts204",
+        "size": "XL",
+        "color": "BLACK",
+        "weight_grams": "502g",
+        "seal_status": "INTACT"
+      }
+    },
+    {
+      "source": "CARRIER",
+      "organization_id": "DELHIVERY",
+      "event_type": "PICKUP_SCAN",
+      "timestamp": "2026-08-23T12:00:00Z",
+      "attributes": {
+        "weight_grams": "505g"
+      }
+    },
+    {
+      "source": "RETURN",
+      "organization_id": "RETURN-HUB-WEST",
+      "event_type": "RETURN_INSPECTION",
+      "timestamp": "2026-08-25T16:00:00Z",
+      "attributes": {
+        "sku": "TS-204",
+        "size": "XL",
+        "color": "BLACK",
+        "weight_grams": "500g",
+        "condition": "INTACT_TAGS"
+      }
+    }
+  ]
+}

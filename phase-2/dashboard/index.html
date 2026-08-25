@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriNetra AI — Investigator Dashboard (Phase 2)</title>
+    <!-- Ant Design CSS + Tailwind CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.24.15/antd.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .severity-critical { background-color: #fff1f0; border: 1px solid #ffa39e; color: #cf1322; }
+        .severity-high { background-color: #fff7e6; border: 1px solid #ffd591; color: #d46b08; }
+        .severity-medium { background-color: #feffe6; border: 1px solid #ffffb8; color: #d4b106; }
+        .severity-low { background-color: #f6ffed; border: 1px solid #b7eb8f; color: #389e0d; }
+    </style>
+</head>
+<body>
+    <div id="app" class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-slate-900 text-white px-6 py-4 flex justify-between items-center shadow-md">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl font-bold tracking-wider text-indigo-400">TriNetra AI</span>
+                <span class="bg-indigo-900 text-indigo-200 text-xs px-2 py-1 rounded font-semibold">Phase 2 Investigator Dashboard</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span id="service-status" class="text-xs bg-emerald-800 text-emerald-100 px-3 py-1 rounded-full flex items-center">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></span> Services Online
+                </span>
+                <button onclick="refreshData()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm px-4 py-1.5 rounded transition shadow">
+                    🔄 Refresh Queue
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <div class="flex-1 p-6 grid grid-cols-12 gap-6">
+            <!-- Left: Investigation Queue (8 cols) -->
+            <div class="col-span-12 lg:col-span-8 space-y-6">
+                <!-- Filters Bar -->
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <label class="text-xs font-semibold text-gray-500 uppercase">Status Filter:</label>
+                        <select id="filter-status" onchange="refreshData()" class="border border-gray-300 rounded px-3 py-1.5 text-sm bg-white focus:outline-none focus:border-indigo-500">
+                            <option value="DECISION_PENDING_REVIEW" selected>Pending Review</option>
+                            <option value="APPROVED">Approved (Refund)</option>
+                            <option value="REJECTED">Rejected</option>
+                            <option value="INVESTIGATING">Investigating</option>
+                            <option value="">All Statuses</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <label class="text-xs font-semibold text-gray-500 uppercase">Quick Stats:</label>
+                        <span class="text-xs bg-gray-100 text-gray-700 px-2.5 py-1 rounded font-medium" id="stat-total">Total: 0</span>
+                        <span class="text-xs bg-red-100 text-red-700 px-2.5 py-1 rounded font-medium" id="stat-high-risk">High Risk: 0</span>
+                    </div>
+                </div>
+
+                <!-- Claims Table -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50 border-b border-gray-200 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                <th class="py-3 px-4">Claim ID / Order</th>
+                                <th class="py-3 px-4">Amount</th>
+                                <th class="py-3 px-4">Automated Verdict</th>
+                                <th class="py-3 px-4">Confidence</th>
+                                <th class="py-3 px-4">Status</th>
+                                <th class="py-3 px-4 text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="claims-table-body" class="divide-y divide-gray-100 text-sm">
+                            <tr>
+                                <td colspan="6" class="text-center py-8 text-gray-400">Loading investigation queue...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Right: Detail Panel / Override Drawer (4 cols) -->
+            <div class="col-span-12 lg:col-span-4">
+                <div id="detail-panel" class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sticky top-6 space-y-6">
+                    <div class="border-b border-gray-100 pb-4 flex justify-between items-start">
+                        <div>
+                            <h2 class="text-lg font-bold text-gray-900" id="detail-claim-id">Select a Claim</h2>
+                            <p class="text-xs text-gray-500" id="detail-created">Click 'Review' on any claim to inspect evidence</p>
+                        </div>
+                        <span id="detail-badge" class="hidden text-xs font-bold px-2.5 py-1 rounded uppercase"></span>
+                    </div>
+
+                    <!-- Selected Claim Details -->
+                    <div id="detail-content" class="hidden space-y-5">
+                        <!-- Summary Cards -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-gray-50 p-3 rounded border border-gray-100">
+                                <span class="text-xs text-gray-400 block uppercase">Claim Amount</span>
+                                <span class="text-base font-bold text-gray-800" id="detail-amount">₹0</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded border border-gray-100">
+                                <span class="text-xs text-gray-400 block uppercase">Confidence</span>
+                                <span class="text-base font-bold text-indigo-600" id="detail-confidence">0%</span>
+                            </div>
+                        </div>
+
+                        <!-- Fraud Signals Section -->
+                        <div>
+                            <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Detected Fraud Signals</h3>
+                            <div id="detail-signals" class="space-y-2 max-h-48 overflow-y-auto pr-1">
+                                <!-- Signals injected dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Verdict Reasoning -->
+                        <div>
+                            <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">System Reasoning</h3>
+                            <pre id="detail-reasoning" class="bg-gray-900 text-gray-100 text-xs p-3 rounded overflow-x-auto font-mono leading-relaxed whitespace-pre-wrap"></pre>
+                        </div>
+
+                        <!-- Override Form -->
+                        <div class="border-t border-gray-100 pt-4 space-y-3">
+                            <h3 class="text-xs font-bold text-gray-700 uppercase">Investigator Verdict Override</h3>
+                            <div>
+                                <select id="override-verdict" class="w-full border border-gray-300 rounded px-3 py-2 text-sm bg-white focus:ring-2 focus:ring-indigo-500">
+                                    <option value="REFUND">Approve Refund (REFUND)</option>
+                                    <option value="REJECT">Reject Claim (REJECT)</option>
+                                    <option value="INVESTIGATE">Mark for Deeper Investigation (INVESTIGATE)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <textarea id="override-reasoning" rows="3" placeholder="Enter override justification (minimum 10 characters)..." class="w-full border border-gray-300 rounded p-2 text-xs focus:ring-2 focus:ring-indigo-500"></textarea>
+                            </div>
+                            <button onclick="submitOverride()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded text-sm transition shadow">
+                                Save Investigator Decision
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder when no claim selected -->
+                    <div id="detail-placeholder" class="py-12 text-center text-gray-400 space-y-3">
+                        <div class="text-4xl">🔍</div>
+                        <p class="text-sm">Select a claim from the queue on the left to view evidence artifacts and submit decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8080/api/v2';
+        let currentClaimId = null;
+
+        async function refreshData() {
+            const status = document.getElementById('filter-status').value;
+            const tbody = document.getElementById('claims-table-body');
+            tbody.innerHTML = `<tr><td colspan="6" class="text-center py-8 text-gray-400">Fetching claims from Claim Service...</td></tr>`;
+
+            try {
+                const res = await fetch(`${API_BASE}/claims/search?status=${encodeURIComponent(status)}&limit=50`);
+                const data = await res.json();
+                renderTable(data.claims || []);
+            } catch (err) {
+                console.error("Fetch error:", err);
+                tbody.innerHTML = `<tr><td colspan="6" class="text-center py-8 text-red-500">Failed to connect to Claim Service (port 8080). Ensure backend is running.</td></tr>`;
+            }
+        }
+
+        function renderTable(claims) {
+            const tbody = document.getElementById('claims-table-body');
+            document.getElementById('stat-total').innerText = `Total: ${claims.length}`;
+
+            let highRiskCount = 0;
+            if (claims.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="text-center py-8 text-gray-400">No claims match the current filter.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = claims.map(c => {
+                const conf = (c.confidence_score ? c.confidence_score * 100 : 0).toFixed(0);
+                const isHighRisk = c.automated_verdict === 'REJECT' || (c.confidence_score && c.confidence_score > 0.7);
+                if (isHighRisk) highRiskCount++;
+
+                const verdictBadge = getVerdictBadge(c.automated_verdict);
+
+                return `
+                    <tr class="hover:bg-gray-50 transition border-b border-gray-100">
+                        <td class="py-3 px-4 font-mono text-xs font-semibold text-indigo-600">
+                            ${c.claim_id.substring(0, 8)}...
+                            <span class="block text-gray-400 font-sans font-normal">${c.order_id || 'N/A'}</span>
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-gray-700">₹${c.claim_amount || 0}</td>
+                        <td class="py-3 px-4">${verdictBadge}</td>
+                        <td class="py-3 px-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-12 bg-gray-200 rounded-full h-1.5 overflow-hidden">
+                                    <div class="bg-indigo-600 h-1.5" style="width: ${conf}%"></div>
+                                </div>
+                                <span class="text-xs font-medium text-gray-600">${conf}%</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-4">
+                            <span class="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600 font-medium">${c.status}</span>
+                        </td>
+                        <td class="py-3 px-4 text-right">
+                            <button onclick="loadClaimDetail('${c.claim_id}')" class="text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold px-3 py-1.5 rounded transition">
+                                Review →
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            document.getElementById('stat-high-risk').innerText = `High Risk: ${highRiskCount}`;
+        }
+
+        async function loadClaimDetail(claimId) {
+            currentClaimId = claimId;
+            document.getElementById('detail-placeholder').classList.add('hidden');
+            document.getElementById('detail-content').classList.remove('hidden');
+
+            document.getElementById('detail-claim-id').innerText = `Claim: ${claimId.substring(0, 8)}...`;
+
+            try {
+                const res = await fetch(`${API_BASE}/claims/${claimId}`);
+                const data = await res.json();
+
+                document.getElementById('detail-created').innerText = `Created: ${new Date(data.created_at).toLocaleString()}`;
+                document.getElementById('detail-amount').innerText = `₹${data.claim_amount || 0}`;
+                document.getElementById('detail-confidence').innerText = `${((data.confidence_score || 0) * 100).toFixed(0)}%`;
+
+                // Render badge
+                const badge = document.getElementById('detail-badge');
+                badge.classList.remove('hidden');
+                badge.className = `text-xs font-bold px-2.5 py-1 rounded uppercase ${getBadgeStyle(data.automated_verdict)}`;
+                badge.innerText = data.automated_verdict || 'PENDING';
+
+                // Render signals
+                const signalsContainer = document.getElementById('detail-signals');
+                if (data.fraud_signals && data.fraud_signals.length > 0) {
+                    signalsContainer.innerHTML = data.fraud_signals.map(s => `
+                        <div class="p-2.5 rounded text-xs severity-${s.severity}">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-bold uppercase tracking-wider">${s.signal_type}</span>
+                                <span class="font-semibold">${(s.confidence_score * 100).toFixed(0)}% conf</span>
+                            </div>
+                            <p class="text-gray-700">${s.reasoning}</p>
+                        </div>
+                    `).join('');
+                } else {
+                    signalsContainer.innerHTML = `<p class="text-xs text-gray-400 italic py-2">No fraud signals detected for this claim.</p>`;
+                }
+
+                // Render reasoning
+                const reasoning = data.verdict_reasoning ? data.verdict_reasoning.reasoning_text : 'No automated reasoning recorded yet.';
+                document.getElementById('detail-reasoning').innerText = reasoning;
+
+            } catch (err) {
+                console.error("Detail fetch error:", err);
+            }
+        }
+
+        async function submitOverride() {
+            if (!currentClaimId) return;
+
+            const verdict = document.getElementById('override-verdict').value;
+            const reasoning = document.getElementById('override-reasoning').value.trim();
+
+            if (reasoning.length < 10) {
+                alert("Please provide a reasoning justification of at least 10 characters.");
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API_BASE}/claims/${currentClaimId}/override`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        verdict: verdict,
+                        reasoning: reasoning,
+                        investigator_id: '00000000-0000-0000-0000-000000000001'
+                    })
+                });
+
+                if (res.ok) {
+                    alert("Investigator decision saved successfully!");
+                    document.getElementById('override-reasoning').value = '';
+                    refreshData();
+                    loadClaimDetail(currentClaimId);
+                } else {
+                    const err = await res.json();
+                    alert(`Override failed: ${err.detail || 'Unknown error'}`);
+                }
+            } catch (err) {
+                alert(`Error submitting override: ${err.message}`);
+            }
+        }
+
+        function getVerdictBadge(verdict) {
+            if (!verdict) return `<span class="text-xs text-gray-400">PENDING</span>`;
+            switch(verdict) {
+                case 'REFUND': return `<span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-0.5 rounded font-bold">REFUND</span>`;
+                case 'REJECT': return `<span class="bg-rose-100 text-rose-800 text-xs px-2 py-0.5 rounded font-bold">REJECT</span>`;
+                case 'INVESTIGATE': return `<span class="bg-amber-100 text-amber-800 text-xs px-2 py-0.5 rounded font-bold">INVESTIGATE</span>`;
+                default: return `<span class="bg-gray-100 text-gray-800 text-xs px-2 py-0.5 rounded font-bold">${verdict}</span>`;
+            }
+        }
+
+        function getBadgeStyle(verdict) {
+            switch(verdict) {
+                case 'REFUND': return 'bg-emerald-100 text-emerald-800';
+                case 'REJECT': return 'bg-rose-100 text-rose-800';
+                case 'INVESTIGATE': return 'bg-amber-100 text-amber-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        // Initial load
+        refreshData();
+    </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+For the first core feature, we are building the Evidence Reconciliation Engine.
+
+Not the dashboard. Not the customer portal. Not the LLM. Not the full fraud system.
+
+The feature is:
+
+“Given multiple records about the same product from different stakeholders, determine whether those records are consistent or conflicting.”
+
+Example:
+
+```text
+Order
+SKU: KB-2000
+Weight: 900g
+
+Warehouse
+SKU: KB-2000
+Weight: 905g
+
+Carrier
+Weight: 902g
+
+Return Center
+Weight: 210g
+SKU: KB-2000
+```
+
+TriNetra compares these records and produces:
+
+```text
+STATUS: INCONSISTENT
+
+Detected:
+• Outbound weights are consistent.
+• Return weight differs significantly.
+• Product identity matches.
+• Evidence indicates a possible product/package change after dispatch.
+
+Action:
+Additional verification required.
+```
+
+Technically, the first core feature contains four parts:
+
+```text
+Evidence Input
+      ↓
+Canonical Normalization
+      ↓
+Cross-Source Reconciliation
+      ↓
+Conflict Report
+```
+
+The checks we build first are:
+
+1. Product/SKU identity consistency.
+2. Attribute consistency, such as size and color.
+3. Timestamp ordering.
+4. Weight consistency/anomaly detection.
+5. Missing or conflicting evidence.
+
+The research experiment then compares:
+
+```text
+Single-source checks
+        VS
+TriNetra multi-source reconciliation
+```
+
+The main metric is false-negative reduction.
+
+So the first thing you are actually building is:
+
+> A backend research engine that takes evidence from multiple simulated e-commerce stakeholders and detects inconsistencies across the same product lifecycle.
+
+Once that works reliably, we build the next layer around it.
+
+
+For Phase 1, we should use structured JSON as the primary input format.
+
+The reason is simple. TriNetra is comparing evidence from multiple organizations, so every input needs the same basic structure.
+
+Example:
+
+```json
+{
+  "order": {
+    "order_id": "ORD-1001",
+    "product_id": "PROD-001",
+    "sku": "TS-204",
+    "size": "XL",
+    "color": "BLACK",
+    "order_timestamp": "2026-08-23T10:00:00Z"
+  },
+
+  "evidence": [
+    {
+      "source": "SELLER",
+      "organization_id": "SELLER-01",
+      "event_type": "PRODUCT_DISPATCH",
+      "timestamp": "2026-08-23T10:30:00Z",
+      "attributes": {
+        "sku": "TS-204",
+        "size": "XL",
+        "color": "BLACK"
+      }
+    },
+    {
+      "source": "WAREHOUSE",
+      "organization_id": "WH-01",
+      "event_type": "PACKING",
+      "timestamp": "2026-08-23T11:00:00Z",
+      "attributes": {
+        "sku": "TS-204",
+        "size": "XL",
+        "color": "BLACK",
+        "weight_grams": 480
+      }
+    },
+    {
+      "source": "CARRIER",
+      "organization_id": "CARRIER-01",
+      "event_type": "PICKUP",
+      "timestamp": "2026-08-23T12:00:00Z",
+      "attributes": {
+        "weight_grams": 485
+      }
+    }
+  ]
+}
+```
+
+Then TriNetra processes it as:
+
+```text
+JSON Input
+   ↓
+Schema Validation
+   ↓
+Canonical Normalization
+   ↓
+Entity Resolution
+   ↓
+Evidence Reconciliation
+   ↓
+Conflict Detection
+   ↓
+Structured Result
+```
+
+The output should also be JSON.
+
+For example:
+
+```json
+{
+  "status": "INCONSISTENT",
+  "conflicts": [
+    {
+      "type": "WEIGHT_ANOMALY",
+      "sources": ["WAREHOUSE", "CARRIER"],
+      "details": "480g vs 485g"
+    }
+  ],
+  "recommendation": "VERIFY"
+}
+```
+
+For Phase 1, I recommend we support only structured JSON.
+
+Later, we can accept other formats such as CSV, database records, REST payloads, images, and RFID or barcode events, but internally everything should be converted into the same canonical evidence model.
+
+So the principle is:
+
+> External systems can send different formats, but TriNetra should convert them into one standardized evidence representation before reconciliation.
+
+This also fits your current research design, which explicitly uses standardized evidence schemas and structured evidence packets. 
+
+One important point: I would not call this “user data” in Phase 1. It is better to call it “evidence data” or “stakeholder evidence,” because the engine is primarily consuming records about the product lifecycle, not asking the customer to manually enter everything.
+

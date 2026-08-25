@@ -1,0 +1,27 @@
+# TriNetra AI Phase 2 — Dependencies
+
+# ── Core Web Framework & Async DB ───────────────────────────────────────────
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+sqlalchemy[asyncio]>=2.0.0
+asyncpg>=0.29.0
+psycopg2-binary>=2.9.9
+
+# ── Messaging & Caching ──────────────────────────────────────────────────────
+aio-pika>=9.3.0
+redis[hiredis]>=5.0.0
+
+# ── Object Storage & Image Processing ───────────────────────────────────────
+minio>=7.2.0
+pillow>=10.1.0
+opencv-python-headless>=4.8.1.78
+pytesseract>=0.3.10
+
+# ── Integrations & HTTP Client ──────────────────────────────────────────────
+httpx>=0.25.0
+python-multipart>=0.0.6
+
+# ── Testing ──────────────────────────────────────────────────────────────────
+pytest>=7.4.0
+pytest-asyncio>=0.21.0

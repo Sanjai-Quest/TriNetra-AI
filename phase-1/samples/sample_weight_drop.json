@@ -1,0 +1,53 @@
+{
+  "order": {
+    "order_id": "ORD-8820",
+    "product_id": "PROD-KB2000",
+    "sku": "KB-2000",
+    "size": "STANDARD",
+    "color": "BLACK",
+    "order_timestamp": "2026-08-23T10:00:00Z"
+  },
+  "evidence": [
+    {
+      "source": "SELLER",
+      "organization_id": "SELLER-KEYBOARDS-INC",
+      "event_type": "PRODUCT_DISPATCH",
+      "timestamp": "2026-08-23T10:30:00Z",
+      "attributes": {
+        "sku": "KB-2000",
+        "weight_grams": "900g"
+      }
+    },
+    {
+      "source": "WAREHOUSE",
+      "organization_id": "WH-BLR-01",
+      "event_type": "PACKING_INSPECTION",
+      "timestamp": "2026-08-23T11:00:00Z",
+      "attributes": {
+        "sku": "KB-2000",
+        "weight_grams": "905g",
+        "seal_status": "INTACT"
+      }
+    },
+    {
+      "source": "CARRIER",
+      "organization_id": "BLUEDART-LOGISTICS",
+      "event_type": "PICKUP_SCAN",
+      "timestamp": "2026-08-23T12:00:00Z",
+      "attributes": {
+        "weight_grams": "902g"
+      }
+    },
+    {
+      "source": "RETURN",
+      "organization_id": "RETURN-HUB-NORTH",
+      "event_type": "RETURN_INSPECTION",
+      "timestamp": "2026-08-25T14:00:00Z",
+      "attributes": {
+        "sku": "KB-2000",
+        "weight_grams": "210g",
+        "condition": "EMPTY_BOX"
+      }
+    }
+  ]
+}

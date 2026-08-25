@@ -1,0 +1,25 @@
+[2026-08-07 09:55:23] INFO: ======================================================================
+[2026-08-07 09:55:23] INFO: STARTING TRINETRA AI PHASE 2 LITERATURE ANALYSIS ENGINE
+[2026-08-07 09:55:23] INFO: ======================================================================
+[2026-08-07 09:55:23] INFO: Loaded 184 relevant research papers for Phase 2 analysis.
+[2026-08-07 10:29:13] INFO: ======================================================================
+[2026-08-07 10:29:13] INFO: STARTING TRINETRA AI PHASE 2 LITERATURE ANALYSIS ENGINE
+[2026-08-07 10:29:13] INFO: ======================================================================
+[2026-08-07 10:29:13] INFO: Loaded 184 relevant research papers for Phase 2 analysis.
+[2026-08-07 10:29:15] INFO: Successfully extracted knowledge, themes, and module mappings for 184 papers.
+[2026-08-07 10:29:15] INFO: Saved literature_matrix.csv (184 rows) -> C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\literature_matrix.csv
+[2026-08-07 10:29:15] INFO: Saved theme_classification.csv (184 rows) -> C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\theme_classification.csv
+[2026-08-07 10:29:15] INFO: Saved research_gap_analysis.csv (184 rows) -> C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\research_gap_analysis.csv
+[2026-08-07 10:29:15] INFO: Saved existing_vs_proposed.csv (5 rows) -> C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\existing_vs_proposed.csv
+[2026-08-07 10:29:15] INFO: Saved trinetra_mapping.csv (8 rows) -> C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\trinetra_mapping.csv
+[2026-08-07 10:29:15] INFO: Successfully generated research summary report at C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\research_summary.md
+[2026-08-07 10:29:15] INFO: ======================================================================
+[2026-08-07 10:29:15] INFO: TRINETRA PHASE 2 LITERATURE ANALYSIS COMPLETE
+[2026-08-07 10:29:15] INFO: [Matrix 1] literature_matrix.csv:       C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\literature_matrix.csv
+[2026-08-07 10:29:15] INFO: [Matrix 2] theme_classification.csv:   C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\theme_classification.csv
+[2026-08-07 10:29:15] INFO: [Matrix 3] research_gap_analysis.csv:  C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\research_gap_analysis.csv
+[2026-08-07 10:29:15] INFO: [Matrix 4] existing_vs_proposed.csv:   C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\existing_vs_proposed.csv
+[2026-08-07 10:29:15] INFO: [Matrix 5] trinetra_mapping.csv:       C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\trinetra_mapping.csv
+[2026-08-07 10:29:15] INFO: [Report]   research_summary.md:        C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\output\research_summary.md
+[2026-08-07 10:29:15] INFO: Process Log: C:\Users\LENOVO\Downloads\xscrapper\literature_analysis\logs\literature_analysis_log.txt
+[2026-08-07 10:29:15] INFO: ======================================================================

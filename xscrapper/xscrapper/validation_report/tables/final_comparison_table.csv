@@ -1,0 +1,9 @@
+﻿Problem,Existing_Papers,Existing_SaaS,TriNetra_AI,Remaining_Gap,Evidence_Source
+Return Fraud Detection,"Partial – Fraud classification (logistic regression, ML)","Strong – Riskified, Forter, Signifyd",Integrated with multi-modal evidence,Physical package IoT integration,"TRINETRA_0001, 0095, Complaint Cluster: Return Abuse"
+Multi-Source Evidence Cross-Verification,Not addressed – siloed data sources,Weak – proprietary black-box signals,Core module – Evidence Consistency Engine,Real-time video streaming analysis,Research Gap GAP-1; Complaint Cluster: Evidence Problems
+Adaptive Verification Friction,Not addressed – static policies,Weak – rule-based thresholds,Core module – Adaptive Verification Engine,Multi-language customer policy communication,Research Gap GAP-2; existing_vs_proposed.csv
+Symmetric Buyer & Seller Trust Scoring,Buyer-centric only – seller neglected,Weak – buyer-focused,Core module – Symmetric Trust Intelligence,Cross-marketplace trust portability,Research Gap GAP-3; 74 Trust Intelligence papers
+Explainable Dispute Decisions,"Early XAI work – generic, not dispute-specific",None – black-box decisions,Core module – Explainability layer,Regulatory explainability compliance,Research Gap GAP-4; 39 Explainability papers
+Immutable Case Timeline Tracking,Not addressed,Weak – basic order status only,Core module – Immutable Case Timeline,Blockchain immutability for legal evidence,Research Gap GAP-5; 39 Case Timeline papers
+Human-in-the-Loop Support,Some evaluative AI literature,Weak – human escalation only,Core module – Human Review Co-Pilot,Automated arbitration without human review,10 Human Review papers; Customer Service complaints
+Unified Multi-Stakeholder Platform,Not addressed – fragmented systems,None – isolated modules,End-to-end unified platform,Cross-border marketplace dispute resolution,TriNetra Research Bible Section 2.5

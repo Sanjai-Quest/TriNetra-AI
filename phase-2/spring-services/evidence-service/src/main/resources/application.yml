@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: evidence-service
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/trinetra}
+    username: ${POSTGRES_USER:trinetra_user}
+    password: ${POSTGRES_PASSWORD:trinetra_dev_pass}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:trinetra_admin}
+    password: ${RABBITMQ_PASS:trinetra_rabbit_pass}
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 30MB
+
+minio:
+  endpoint: ${MINIO_ENDPOINT:http://localhost:9000}
+  access-key: ${MINIO_ROOT_USER:trinetra_minio}
+  secret-key: ${MINIO_ROOT_PASSWORD:trinetra_minio_pass}
+  bucket-name: ${MINIO_BUCKET_EVIDENCE:evidence-files}

@@ -1,0 +1,905 @@
+[2026-08-07 08:33:31] INFO: ======================================================================
+[2026-08-07 08:33:31] INFO: STARTING TRINETRA AI LITERATURE MINING PIPELINE
+[2026-08-07 08:33:31] INFO: ======================================================================
+[2026-08-07 08:33:31] INFO: Populated duplicate checker with 0 existing papers from CSV.
+[2026-08-07 08:33:31] INFO: ------------------------------------------------------------
+[2026-08-07 08:33:31] INFO: [1/33] Processing Search Keyword: 'return fraud'
+[2026-08-07 08:33:31] INFO: Querying Priority 1 (OpenAlex) for: 'return fraud'
+[2026-08-07 08:33:50] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.jacceco.2003.06.003 HTTP status 404
+[2026-08-07 08:33:55] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.euroecorev.2015.11.005 HTTP status 400
+[2026-08-07 08:34:00] WARNING: [SemanticScholar] Rate limited (429). Retrying in 2s...
+[2026-08-07 08:34:03] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007/s12197-018-9445-y HTTP status 400
+[2026-08-07 08:34:06] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.eswa.2019.03.042 HTTP status 400
+[2026-08-07 08:34:10] WARNING: [SemanticScholar] Rate limited (429). Retrying in 2s...
+[2026-08-07 08:34:13] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007/s10551-014-2393-3 HTTP status 400
+[2026-08-07 08:34:15] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ijcnn.2015.7280527 HTTP status 400
+[2026-08-07 08:34:19] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.dss.2021.113492 HTTP status 400
+[2026-08-07 08:34:22] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.13140/rg.2.1.1736.6806 HTTP status 404
+[2026-08-07 08:34:23] WARNING: [Crossref] Failed request https://api.crossref.org/works/10.13140/rg.2.1.1736.6806 HTTP status 404
+[2026-08-07 08:34:24] INFO: Keyword Summary for 'return fraud': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:34:24] INFO: ------------------------------------------------------------
+[2026-08-07 08:34:24] INFO: [2/33] Processing Search Keyword: 'return abuse'
+[2026-08-07 08:34:24] INFO: Querying Priority 1 (OpenAlex) for: 'return abuse'
+[2026-08-07 08:34:30] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/s0749-3797(98)00017-8 HTTP status 400
+[2026-08-07 08:34:34] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/0738-0593(96)00016-8 HTTP status 400
+[2026-08-07 08:34:37] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.ijpe.2018.05.016 HTTP status 400
+[2026-08-07 08:34:39] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/s0896-6273(00)80112-9 HTTP status 404
+[2026-08-07 08:34:43] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.chiabu.2003.09.008 HTTP status 400
+[2026-08-07 08:34:50] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1891/0886-6708.14.1.55 HTTP status 400
+[2026-08-07 08:34:55] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.avb.2003.09.001 HTTP status 400
+[2026-08-07 08:35:05] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1037/tam0000025 HTTP status 400
+[2026-08-07 08:35:08] INFO: Keyword Summary for 'return abuse': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:35:08] INFO: ------------------------------------------------------------
+[2026-08-07 08:35:08] INFO: [3/33] Processing Search Keyword: 'reverse logistics'
+[2026-08-07 08:35:08] INFO: Querying Priority 1 (OpenAlex) for: 'reverse logistics'
+[2026-08-07 08:35:13] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/s0377-2217(97)00230-0 HTTP status 400
+[2026-08-07 08:35:17] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.techfore.2004.07.002 HTTP status 400
+[2026-08-07 08:35:45] INFO: ======================================================================
+[2026-08-07 08:35:45] INFO: STARTING TRINETRA AI LITERATURE MINING PIPELINE
+[2026-08-07 08:35:45] INFO: ======================================================================
+[2026-08-07 08:35:45] INFO: Populated duplicate checker with 0 existing papers from CSV.
+[2026-08-07 08:35:45] INFO: ------------------------------------------------------------
+[2026-08-07 08:35:45] INFO: [1/33] Processing Search Keyword: 'return fraud'
+[2026-08-07 08:35:45] INFO: Querying Priority 1 (OpenAlex) for: 'return fraud'
+[2026-08-07 08:36:04] WARNING: [SemanticScholar] Rate limited (429). Retrying in 2s...
+[2026-08-07 08:36:10] WARNING: [SemanticScholar] Rate limited (429). Retrying in 4s...
+[2026-08-07 08:36:14] WARNING: [SemanticScholar] Rate limited (429). Retrying in 8s...
+[2026-08-07 08:36:28] WARNING: [SemanticScholar] Rate limited (429). Retrying in 2s...
+[2026-08-07 08:36:32] WARNING: [SemanticScholar] Rate limited (429). Retrying in 4s...
+[2026-08-07 08:36:37] WARNING: [SemanticScholar] Rate limited (429). Retrying in 8s...
+[2026-08-07 08:36:49] WARNING: [SemanticScholar] Rate limited (429). Retrying in 2s...
+[2026-08-07 08:36:52] WARNING: [SemanticScholar] Rate limited (429). Retrying in 4s...
+[2026-08-07 08:36:58] WARNING: [SemanticScholar] Rate limited (429). Retrying in 8s...
+[2026-08-07 08:37:09] WARNING: [SemanticScholar] Rate limited (429). Retrying in 2s...
+[2026-08-07 08:37:12] WARNING: [SemanticScholar] Rate limited (429). Retrying in 4s...
+[2026-08-07 08:37:17] WARNING: [SemanticScholar] Rate limited (429). Retrying in 8s...
+[2026-08-07 08:37:28] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2Fs10551-014-2393-3 HTTP status 400
+[2026-08-07 08:37:34] WARNING: [SemanticScholar] Rate limited (429). Retrying in 2s...
+[2026-08-07 08:37:39] WARNING: [SemanticScholar] Rate limited (429). Retrying in 4s...
+[2026-08-07 08:37:46] WARNING: [SemanticScholar] Rate limited (429). Retrying in 8s...
+[2026-08-07 08:37:54] INFO: Keyword Summary for 'return fraud': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:37:54] INFO: ------------------------------------------------------------
+[2026-08-07 08:37:54] INFO: [2/33] Processing Search Keyword: 'return abuse'
+[2026-08-07 08:37:54] INFO: Querying Priority 1 (OpenAlex) for: 'return abuse'
+[2026-08-07 08:38:02] WARNING: [SemanticScholar] Rate limited (429). Retrying in 2s...
+[2026-08-07 08:38:06] WARNING: [SemanticScholar] Rate limited (429). Retrying in 4s...
+[2026-08-07 08:38:11] WARNING: [SemanticScholar] Rate limited (429). Retrying in 8s...
+[2026-08-07 08:38:23] INFO: ======================================================================
+[2026-08-07 08:38:23] INFO: STARTING TRINETRA AI LITERATURE MINING PIPELINE
+[2026-08-07 08:38:23] INFO: ======================================================================
+[2026-08-07 08:38:23] INFO: Populated duplicate checker with 0 existing papers from CSV.
+[2026-08-07 08:38:23] INFO: ------------------------------------------------------------
+[2026-08-07 08:38:23] INFO: [1/33] Processing Search Keyword: 'return fraud'
+[2026-08-07 08:38:23] INFO: Querying Priority 1 (OpenAlex) for: 'return fraud'
+[2026-08-07 08:38:23] ERROR: [OpenAlex] Request error on https://api.openalex.org/works (Attempt 1/3): HTTPSConnectionPool(host='api.openalex.org', port=443): Max retries exceeded with url: /works?search=return+fraud&per_page=25&sort=relevance_score%3Adesc (Caused by NameResolutionError("HTTPSConnection(host='api.openalex.org', port=443): Failed to resolve 'api.openalex.org' ([Errno 11001] getaddrinfo failed)"))
+[2026-08-07 08:38:25] ERROR: [OpenAlex] Request error on https://api.openalex.org/works (Attempt 2/3): HTTPSConnectionPool(host='api.openalex.org', port=443): Max retries exceeded with url: /works?search=return+fraud&per_page=25&sort=relevance_score%3Adesc (Caused by NameResolutionError("HTTPSConnection(host='api.openalex.org', port=443): Failed to resolve 'api.openalex.org' ([Errno 11001] getaddrinfo failed)"))
+[2026-08-07 08:38:46] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.jacceco.2003.06.003 HTTP status 404
+[2026-08-07 08:38:52] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:38:55] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:38:57] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.eswa.2019.03.042 HTTP status 400
+[2026-08-07 08:39:00] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2Fs10551-014-2393-3 HTTP status 400
+[2026-08-07 08:39:03] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:04] INFO: Keyword Summary for 'return fraud': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:39:04] INFO: ------------------------------------------------------------
+[2026-08-07 08:39:04] INFO: [2/33] Processing Search Keyword: 'return abuse'
+[2026-08-07 08:39:04] INFO: Querying Priority 1 (OpenAlex) for: 'return abuse'
+[2026-08-07 08:39:11] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:14] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:17] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.ijpe.2018.05.016 HTTP status 400
+[2026-08-07 08:39:21] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fs0896-6273%2800%2980112-9 HTTP status 404
+[2026-08-07 08:39:24] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:27] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:31] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:35] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1037%2Ftam0000025 HTTP status 400
+[2026-08-07 08:39:36] INFO: Keyword Summary for 'return abuse': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:39:36] INFO: ------------------------------------------------------------
+[2026-08-07 08:39:36] INFO: [3/33] Processing Search Keyword: 'reverse logistics'
+[2026-08-07 08:39:36] INFO: Querying Priority 1 (OpenAlex) for: 'reverse logistics'
+[2026-08-07 08:39:42] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:45] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:48] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:51] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:55] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:39:59] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:40:04] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2F978-3-540-24803-3_1 HTTP status 400
+[2026-08-07 08:40:08] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2F978-3-540-24803-3 HTTP status 404
+[2026-08-07 08:40:11] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:40:14] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:40:17] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:40:20] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:40:24] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:40:27] INFO: Keyword Summary for 'reverse logistics': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 08:40:27] INFO: ------------------------------------------------------------
+[2026-08-07 08:40:27] INFO: [4/33] Processing Search Keyword: 'consumer trust'
+[2026-08-07 08:40:27] INFO: Querying Priority 1 (OpenAlex) for: 'consumer trust'
+[2026-08-07 08:40:37] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1023%2Fa%3A1019104520776 HTTP status 400
+[2026-08-07 08:40:44] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:40:46] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:40:48] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:40:52] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:40:58] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.ijinfomgt.2012.11.006 HTTP status 400
+[2026-08-07 08:41:00] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:03] INFO: ======================================================================
+[2026-08-07 08:41:03] INFO: STARTING TRINETRA AI LITERATURE MINING PIPELINE
+[2026-08-07 08:41:03] INFO: ======================================================================
+[2026-08-07 08:41:03] INFO: Populated duplicate checker with 0 existing papers from CSV.
+[2026-08-07 08:41:03] INFO: ------------------------------------------------------------
+[2026-08-07 08:41:03] INFO: [1/33] Processing Search Keyword: 'return fraud'
+[2026-08-07 08:41:03] INFO: Querying Priority 1 (OpenAlex) for: 'return fraud'
+[2026-08-07 08:41:03] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:07] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1023%2Fa%3A1022962631249 HTTP status 400
+[2026-08-07 08:41:10] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:11] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:13] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:14] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:16] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:18] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:18] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:21] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:21] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:24] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:26] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:26] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:28] INFO: Keyword Summary for 'return fraud': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:41:28] INFO: ------------------------------------------------------------
+[2026-08-07 08:41:28] INFO: [2/33] Processing Search Keyword: 'return abuse'
+[2026-08-07 08:41:28] INFO: Querying Priority 1 (OpenAlex) for: 'return abuse'
+[2026-08-07 08:41:28] INFO: Keyword Summary for 'consumer trust': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:41:28] INFO: ------------------------------------------------------------
+[2026-08-07 08:41:28] INFO: [5/33] Processing Search Keyword: 'decision support'
+[2026-08-07 08:41:28] INFO: Querying Priority 1 (OpenAlex) for: 'decision support'
+[2026-08-07 08:41:34] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:36] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:37] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:39] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:40] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:41] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2F0167-8051%2882%2990033-x HTTP status 400
+[2026-08-07 08:41:43] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:44] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:46] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:47] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:49] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:51] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:52] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.avb.2003.09.001 HTTP status 400
+[2026-08-07 08:41:54] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:55] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:57] INFO: Keyword Summary for 'return abuse': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:41:57] INFO: ------------------------------------------------------------
+[2026-08-07 08:41:57] INFO: [3/33] Processing Search Keyword: 'reverse logistics'
+[2026-08-07 08:41:57] INFO: Querying Priority 1 (OpenAlex) for: 'reverse logistics'
+[2026-08-07 08:41:57] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:41:59] INFO: Keyword Summary for 'decision support': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:41:59] INFO: ------------------------------------------------------------
+[2026-08-07 08:41:59] INFO: [6/33] Processing Search Keyword: 'explainable AI'
+[2026-08-07 08:41:59] INFO: Querying Priority 1 (OpenAlex) for: 'explainable AI'
+[2026-08-07 08:42:02] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:03] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:06] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:07] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.inffus.2019.12.012 HTTP status 400
+[2026-08-07 08:42:09] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.omega.2006.11.012 HTTP status 400
+[2026-08-07 08:42:11] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:12] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:14] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:14] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.resconrec.2015.02.009 HTTP status 400
+[2026-08-07 08:42:17] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:17] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:19] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:20] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:23] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:23] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2F978-3-540-24803-3 HTTP status 404
+[2026-08-07 08:42:25] INFO: Keyword Summary for 'explainable AI': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:42:25] INFO: ------------------------------------------------------------
+[2026-08-07 08:42:25] INFO: [7/33] Processing Search Keyword: 'e-commerce returns'
+[2026-08-07 08:42:25] INFO: Querying Priority 1 (OpenAlex) for: 'e-commerce returns'
+[2026-08-07 08:42:28] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:32] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:35] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:35] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:38] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:39] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:44] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.ejor.2018.08.023 HTTP status 400
+[2026-08-07 08:42:49] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:49] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:42:53] INFO: Keyword Summary for 'reverse logistics': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 08:42:53] INFO: ------------------------------------------------------------
+[2026-08-07 08:42:53] INFO: [4/33] Processing Search Keyword: 'consumer trust'
+[2026-08-07 08:42:53] INFO: Querying Priority 1 (OpenAlex) for: 'consumer trust'
+[2026-08-07 08:42:55] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.trd.2017.07.020 HTTP status 400
+[2026-08-07 08:42:58] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:00] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1023%2Fa%3A1019104520776 HTTP status 400
+[2026-08-07 08:43:03] INFO: Keyword Summary for 'e-commerce returns': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:43:03] INFO: ------------------------------------------------------------
+[2026-08-07 08:43:03] INFO: [8/33] Processing Search Keyword: 'return authorization'
+[2026-08-07 08:43:03] INFO: Querying Priority 1 (OpenAlex) for: 'return authorization'
+[2026-08-07 08:43:07] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:08] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:10] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:11] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:14] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:16] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:17] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:21] INFO: Keyword Summary for 'return authorization': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:43:21] INFO: ------------------------------------------------------------
+[2026-08-07 08:43:21] INFO: [9/33] Processing Search Keyword: 'refund fraud'
+[2026-08-07 08:43:21] INFO: Querying Priority 1 (OpenAlex) for: 'refund fraud'
+[2026-08-07 08:43:21] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:26] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.jbusres.2018.08.032 HTTP status 400
+[2026-08-07 08:43:28] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:29] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:30] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.2139%2Fssrn.964339 HTTP status 404
+[2026-08-07 08:43:32] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:34] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:49] ERROR: [SemanticScholar] Request error on https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.ememar.2024.101212 (Attempt 1/3): ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+[2026-08-07 08:43:51] ERROR: [SemanticScholar] Request error on https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.ememar.2024.101212 (Attempt 2/3): HTTPSConnectionPool(host='api.semanticscholar.org', port=443): Max retries exceeded with url: /graph/v1/paper/DOI:10.1016%2Fj.ememar.2024.101212?fields=paperId%2Ctitle%2Cabstract%2Cauthors%2Cyear%2Cjournal%2Cpublisher%2CcitationCount%2CisOpenAccess%2CopenAccessPdf%2CexternalIds%2Curl%2CfieldsOfStudy (Caused by NameResolutionError("HTTPSConnection(host='api.semanticscholar.org', port=443): Failed to resolve 'api.semanticscholar.org' ([Errno 11001] getaddrinfo failed)"))
+[2026-08-07 08:43:55] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:43:58] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:00] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.paid.2022.111527 HTTP status 400
+[2026-08-07 08:44:02] INFO: Keyword Summary for 'refund fraud': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 08:44:02] INFO: ------------------------------------------------------------
+[2026-08-07 08:44:02] INFO: [10/33] Processing Search Keyword: 'customer trust'
+[2026-08-07 08:44:02] INFO: Querying Priority 1 (OpenAlex) for: 'customer trust'
+[2026-08-07 08:44:07] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:09] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:12] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:14] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:17] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:19] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:22] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:24] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.ijinfomgt.2017.01.002 HTTP status 400
+[2026-08-07 08:44:26] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:28] INFO: Keyword Summary for 'customer trust': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 08:44:28] INFO: ------------------------------------------------------------
+[2026-08-07 08:44:28] INFO: [11/33] Processing Search Keyword: 'seller trust'
+[2026-08-07 08:44:28] INFO: Querying Priority 1 (OpenAlex) for: 'seller trust'
+[2026-08-07 08:44:32] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:34] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.jbusres.2018.08.032 HTTP status 400
+[2026-08-07 08:44:37] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:39] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:42] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:44] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:46] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:48] INFO: Keyword Summary for 'seller trust': Found=25, Duplicates Removed=7, Accepted=18
+[2026-08-07 08:44:48] INFO: ------------------------------------------------------------
+[2026-08-07 08:44:48] INFO: [12/33] Processing Search Keyword: 'return policies'
+[2026-08-07 08:44:48] INFO: Querying Priority 1 (OpenAlex) for: 'return policies'
+[2026-08-07 08:44:53] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:54] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:44:57] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:00] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:03] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:05] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:08] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:10] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:13] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:15] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:18] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:20] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:23] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:25] INFO: Keyword Summary for 'return policies': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 08:45:25] INFO: ------------------------------------------------------------
+[2026-08-07 08:45:25] INFO: [13/33] Processing Search Keyword: 'post purchase experience'
+[2026-08-07 08:45:25] INFO: Querying Priority 1 (OpenAlex) for: 'post purchase experience'
+[2026-08-07 08:45:30] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:33] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fs0261-5177%2801%2900035-8 HTTP status 400
+[2026-08-07 08:45:35] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:38] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:40] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:43] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:45] INFO: Keyword Summary for 'post purchase experience': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:45:45] INFO: ------------------------------------------------------------
+[2026-08-07 08:45:45] INFO: [14/33] Processing Search Keyword: 'e-commerce dispute resolution'
+[2026-08-07 08:45:45] INFO: Querying Priority 1 (OpenAlex) for: 'e-commerce dispute resolution'
+[2026-08-07 08:45:49] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:52] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2F0-306-47008-x_3 HTTP status 400
+[2026-08-07 08:45:55] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:57] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:45:59] INFO: Keyword Summary for 'e-commerce dispute resolution': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 08:45:59] INFO: ------------------------------------------------------------
+[2026-08-07 08:45:59] INFO: [15/33] Processing Search Keyword: 'evidence based decision making'
+[2026-08-07 08:45:59] INFO: Querying Priority 1 (OpenAlex) for: 'evidence based decision making'
+[2026-08-07 08:46:04] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:46:06] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2F978-3-319-15347-6_300599 HTTP status 400
+[2026-08-07 08:46:08] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.mnl.2020.06.006 HTTP status 400
+[2026-08-07 08:46:11] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1111%2Fj.1467-842x.1997.tb01730.x HTTP status 400
+[2026-08-07 08:46:13] INFO: Keyword Summary for 'evidence based decision making': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 08:46:13] INFO: ------------------------------------------------------------
+[2026-08-07 08:46:13] INFO: [16/33] Processing Search Keyword: 'human in the loop AI'
+[2026-08-07 08:46:13] INFO: Querying Priority 1 (OpenAlex) for: 'human in the loop AI'
+[2026-08-07 08:46:18] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:46:21] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:46:23] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:46:25] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:46:28] INFO: Keyword Summary for 'human in the loop AI': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 08:46:28] INFO: ------------------------------------------------------------
+[2026-08-07 08:46:28] INFO: [17/33] Processing Search Keyword: 'explainable recommendation'
+[2026-08-07 08:46:28] INFO: Querying Priority 1 (OpenAlex) for: 'explainable recommendation'
+[2026-08-07 08:46:32] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:46:34] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2Fs11280-018-0558-1 HTTP status 400
+[2026-08-07 08:46:37] INFO: Keyword Summary for 'explainable recommendation': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 08:46:37] INFO: ------------------------------------------------------------
+[2026-08-07 08:46:37] INFO: [18/33] Processing Search Keyword: 'fraud prevention'
+[2026-08-07 08:46:37] INFO: Querying Priority 1 (OpenAlex) for: 'fraud prevention'
+[2026-08-07 08:46:40] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:46:43] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:46:45] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:46:48] INFO: Keyword Summary for 'fraud prevention': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 08:46:48] INFO: ------------------------------------------------------------
+[2026-08-07 08:46:48] INFO: [19/33] Processing Search Keyword: 'online retail returns'
+[2026-08-07 08:46:48] INFO: Querying Priority 1 (OpenAlex) for: 'online retail returns'
+[2026-08-07 08:46:52] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.jretai.2015.02.005 HTTP status 400
+[2026-08-07 08:46:55] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:46:58] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:47:01] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:47:04] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:47:08] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2Fs12525-016-0240-3 HTTP status 400
+[2026-08-07 08:47:12] INFO: Keyword Summary for 'online retail returns': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:47:12] INFO: ------------------------------------------------------------
+[2026-08-07 08:47:12] INFO: [20/33] Processing Search Keyword: 'product return management'
+[2026-08-07 08:47:12] INFO: Querying Priority 1 (OpenAlex) for: 'product return management'
+[2026-08-07 08:47:27] ERROR: [OpenAlex] Request error on https://api.openalex.org/works (Attempt 1/3): HTTPSConnectionPool(host='api.openalex.org', port=443): Read timed out. (read timeout=15)
+[2026-08-07 08:47:36] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:47:38] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:47:42] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:47:45] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2Fs00134-012-2769-8 HTTP status 400
+[2026-08-07 08:47:50] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.im.2021.103508 HTTP status 400
+[2026-08-07 08:47:52] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1093%2Fforestscience%2F26.3.435 HTTP status 400
+[2026-08-07 08:47:55] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:47:59] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2Fs10957-006-9061-4 HTTP status 400
+[2026-08-07 08:48:02] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:05] INFO: Keyword Summary for 'product return management': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 08:48:05] INFO: ------------------------------------------------------------
+[2026-08-07 08:48:05] INFO: [21/33] Processing Search Keyword: 'e-commerce return fraud'
+[2026-08-07 08:48:05] INFO: Querying Priority 1 (OpenAlex) for: 'e-commerce return fraud'
+[2026-08-07 08:48:11] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:14] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:18] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:20] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:24] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1111%2Fj.1468-0440.2004.00290.x HTTP status 400
+[2026-08-07 08:48:26] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:29] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:31] INFO: Keyword Summary for 'e-commerce return fraud': Found=25, Duplicates Removed=5, Accepted=20
+[2026-08-07 08:48:31] INFO: ------------------------------------------------------------
+[2026-08-07 08:48:31] INFO: [22/33] Processing Search Keyword: 'adaptive verification dispute'
+[2026-08-07 08:48:31] INFO: Querying Priority 1 (OpenAlex) for: 'adaptive verification dispute'
+[2026-08-07 08:48:38] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:41] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:44] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:46] INFO: ======================================================================
+[2026-08-07 08:48:46] INFO: STARTING TRINETRA AI LITERATURE MINING PIPELINE
+[2026-08-07 08:48:46] INFO: ======================================================================
+[2026-08-07 08:48:46] INFO: Populated duplicate checker with 0 existing papers from CSV.
+[2026-08-07 08:48:46] INFO: ------------------------------------------------------------
+[2026-08-07 08:48:46] INFO: [1/33] Processing Search Keyword: 'return fraud'
+[2026-08-07 08:48:46] INFO: Querying Priority 1 (OpenAlex) for: 'return fraud'
+[2026-08-07 08:48:47] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:49] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:48:52] INFO: Keyword Summary for 'adaptive verification dispute': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 08:48:52] INFO: ------------------------------------------------------------
+[2026-08-07 08:48:52] INFO: [23/33] Processing Search Keyword: 'evidence orchestration dispute'
+[2026-08-07 08:48:52] INFO: Querying Priority 1 (OpenAlex) for: 'evidence orchestration dispute'
+[2026-08-07 08:49:00] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:01] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:03] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:05] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:06] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:08] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2Fs12197-018-9445-y HTTP status 400
+[2026-08-07 08:49:10] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:11] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:14] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:15] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:17] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:17] INFO: Keyword Summary for 'return fraud': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:49:17] INFO: ------------------------------------------------------------
+[2026-08-07 08:49:17] INFO: [2/33] Processing Search Keyword: 'return abuse'
+[2026-08-07 08:49:17] INFO: Querying Priority 1 (OpenAlex) for: 'return abuse'
+[2026-08-07 08:49:19] INFO: Keyword Summary for 'evidence orchestration dispute': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:49:19] INFO: ------------------------------------------------------------
+[2026-08-07 08:49:19] INFO: [24/33] Processing Search Keyword: 'multi stakeholder trust e commerce'
+[2026-08-07 08:49:19] INFO: Querying Priority 1 (OpenAlex) for: 'multi stakeholder trust e commerce'
+[2026-08-07 08:49:30] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:31] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.jbusres.2018.11.054 HTTP status 400
+[2026-08-07 08:49:34] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:37] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:37] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:40] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:41] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fs0896-6273%2800%2980112-9 HTTP status 404
+[2026-08-07 08:49:46] INFO: Keyword Summary for 'multi stakeholder trust e commerce': Found=25, Duplicates Removed=4, Accepted=21
+[2026-08-07 08:49:46] INFO: ------------------------------------------------------------
+[2026-08-07 08:49:46] INFO: [25/33] Processing Search Keyword: 'explainable decision support return'
+[2026-08-07 08:49:46] INFO: Querying Priority 1 (OpenAlex) for: 'explainable decision support return'
+[2026-08-07 08:49:47] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:52] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:54] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:56] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:49:56] INFO: Keyword Summary for 'return abuse': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:49:56] INFO: ------------------------------------------------------------
+[2026-08-07 08:49:56] INFO: [3/33] Processing Search Keyword: 'reverse logistics'
+[2026-08-07 08:49:56] INFO: Querying Priority 1 (OpenAlex) for: 'reverse logistics'
+[2026-08-07 08:49:59] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:02] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:05] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:06] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:09] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:09] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:12] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:13] INFO: Keyword Summary for 'explainable decision support return': Found=25, Duplicates Removed=4, Accepted=21
+[2026-08-07 08:50:13] INFO: ------------------------------------------------------------
+[2026-08-07 08:50:13] INFO: [26/33] Processing Search Keyword: 'customer trust dispute resolution'
+[2026-08-07 08:50:13] INFO: Querying Priority 1 (OpenAlex) for: 'customer trust dispute resolution'
+[2026-08-07 08:50:16] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:19] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:19] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.resconrec.2008.11.006 HTTP status 400
+[2026-08-07 08:50:22] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:22] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:25] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:25] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:28] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:28] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:31] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:31] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fs0148-2963%2801%2900315-0 HTTP status 400
+[2026-08-07 08:50:34] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.ejor.2005.05.032 HTTP status 400
+[2026-08-07 08:50:37] INFO: Keyword Summary for 'customer trust dispute resolution': Found=25, Duplicates Removed=6, Accepted=19
+[2026-08-07 08:50:37] INFO: ------------------------------------------------------------
+[2026-08-07 08:50:37] INFO: [27/33] Processing Search Keyword: 'retail return policy abuse'
+[2026-08-07 08:50:37] INFO: Querying Priority 1 (OpenAlex) for: 'retail return policy abuse'
+[2026-08-07 08:50:37] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:41] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:42] INFO: Keyword Summary for 'reverse logistics': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 08:50:42] INFO: ------------------------------------------------------------
+[2026-08-07 08:50:42] INFO: [4/33] Processing Search Keyword: 'consumer trust'
+[2026-08-07 08:50:42] INFO: Querying Priority 1 (OpenAlex) for: 'consumer trust'
+[2026-08-07 08:50:43] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.ijpe.2018.05.016 HTTP status 400
+[2026-08-07 08:50:46] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:51] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:51] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.4315%2F0362-028x-53.11.978 HTTP status 400
+[2026-08-07 08:50:54] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:50:59] INFO: Keyword Summary for 'retail return policy abuse': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 08:50:59] INFO: ------------------------------------------------------------
+[2026-08-07 08:50:59] INFO: [28/33] Processing Search Keyword: 'seller protection return fraud'
+[2026-08-07 08:50:59] INFO: Querying Priority 1 (OpenAlex) for: 'seller protection return fraud'
+[2026-08-07 08:51:05] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:51:10] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.dss.2005.05.019 HTTP status 400
+[2026-08-07 08:51:12] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:51:16] INFO: ======================================================================
+[2026-08-07 08:51:16] INFO: STARTING TRINETRA AI LITERATURE MINING PIPELINE
+[2026-08-07 08:51:16] INFO: ======================================================================
+[2026-08-07 08:51:16] INFO: Populated duplicate checker with 0 existing papers from CSV.
+[2026-08-07 08:51:16] INFO: ------------------------------------------------------------
+[2026-08-07 08:51:16] INFO: [1/33] Processing Search Keyword: 'return fraud'
+[2026-08-07 08:51:16] INFO: Querying Priority 1 (OpenAlex) for: 'return fraud'
+[2026-08-07 08:51:17] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:51:21] INFO: Keyword Summary for 'seller protection return fraud': Found=25, Duplicates Removed=6, Accepted=19
+[2026-08-07 08:51:21] INFO: ------------------------------------------------------------
+[2026-08-07 08:51:21] INFO: [29/33] Processing Search Keyword: 'warehouse verification return'
+[2026-08-07 08:51:21] INFO: Querying Priority 1 (OpenAlex) for: 'warehouse verification return'
+[2026-08-07 08:51:27] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:51:34] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:51:37] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:51:46] INFO: Keyword Summary for 'return fraud': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:51:46] INFO: ------------------------------------------------------------
+[2026-08-07 08:51:46] INFO: [2/33] Processing Search Keyword: 'return abuse'
+[2026-08-07 08:51:46] INFO: Querying Priority 1 (OpenAlex) for: 'return abuse'
+[2026-08-07 08:51:46] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:51:54] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:52:02] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:52:06] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fs0377-2217%2897%2900230-0 HTTP status 400
+[2026-08-07 08:52:09] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:52:12] INFO: Keyword Summary for 'warehouse verification return': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 08:52:12] INFO: ------------------------------------------------------------
+[2026-08-07 08:52:12] INFO: [30/33] Processing Search Keyword: 'post purchase dispute resolution'
+[2026-08-07 08:52:12] INFO: Querying Priority 1 (OpenAlex) for: 'post purchase dispute resolution'
+[2026-08-07 08:52:12] ERROR: [Crossref] Request error on https://api.crossref.org/works/10.1016/s0749-3797(98)00017-8 (Attempt 1/3): HTTPSConnectionPool(host='api.crossref.org', port=443): Read timed out. (read timeout=15)
+[2026-08-07 08:52:19] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:52:24] INFO: Keyword Summary for 'post purchase dispute resolution': Found=25, Duplicates Removed=6, Accepted=19
+[2026-08-07 08:52:24] INFO: ------------------------------------------------------------
+[2026-08-07 08:52:24] INFO: [31/33] Processing Search Keyword: 'e commerce dispute trust'
+[2026-08-07 08:52:24] INFO: Querying Priority 1 (OpenAlex) for: 'e commerce dispute trust'
+[2026-08-07 08:52:32] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:52:35] INFO: Keyword Summary for 'return abuse': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:52:35] INFO: ------------------------------------------------------------
+[2026-08-07 08:52:35] INFO: [3/33] Processing Search Keyword: 'reverse logistics'
+[2026-08-07 08:52:35] INFO: Querying Priority 1 (OpenAlex) for: 'reverse logistics'
+[2026-08-07 08:52:37] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2Fs10551-021-04884-3 HTTP status 400
+[2026-08-07 08:52:51] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:52:54] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.aos.2011.04.002 HTTP status 400
+[2026-08-07 08:52:57] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:53:02] INFO: Keyword Summary for 'e commerce dispute trust': Found=25, Duplicates Removed=17, Accepted=8
+[2026-08-07 08:53:02] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:02] INFO: [32/33] Processing Search Keyword: 'product switching fraud'
+[2026-08-07 08:53:02] INFO: Querying Priority 1 (OpenAlex) for: 'product switching fraud'
+[2026-08-07 08:53:06] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:53:10] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:53:12] INFO: ======================================================================
+[2026-08-07 08:53:12] INFO: STARTING TRINETRA AI LITERATURE MINING PIPELINE
+[2026-08-07 08:53:12] INFO: ======================================================================
+[2026-08-07 08:53:12] INFO: Populated duplicate checker with 0 existing papers from CSV.
+[2026-08-07 08:53:12] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:12] INFO: [1/33] Processing Search Keyword: 'return fraud'
+[2026-08-07 08:53:12] INFO: Querying Priority 1 (OpenAlex) for: 'return fraud'
+[2026-08-07 08:53:13] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:53:15] INFO: Keyword Summary for 'return fraud': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:53:15] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:15] INFO: [2/33] Processing Search Keyword: 'return abuse'
+[2026-08-07 08:53:15] INFO: Querying Priority 1 (OpenAlex) for: 'return abuse'
+[2026-08-07 08:53:17] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:53:18] INFO: Keyword Summary for 'return abuse': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:53:18] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:18] INFO: [3/33] Processing Search Keyword: 'reverse logistics'
+[2026-08-07 08:53:18] INFO: Querying Priority 1 (OpenAlex) for: 'reverse logistics'
+[2026-08-07 08:53:20] WARNING: [SemanticScholar] Failed request https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007%2Fs10551-013-2019-1 HTTP status 400
+[2026-08-07 08:53:24] INFO: Keyword Summary for 'reverse logistics': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 08:53:24] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:24] INFO: [4/33] Processing Search Keyword: 'consumer trust'
+[2026-08-07 08:53:24] INFO: Querying Priority 1 (OpenAlex) for: 'consumer trust'
+[2026-08-07 08:53:25] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:53:27] INFO: Keyword Summary for 'consumer trust': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:53:27] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:27] INFO: [5/33] Processing Search Keyword: 'decision support'
+[2026-08-07 08:53:27] INFO: Querying Priority 1 (OpenAlex) for: 'decision support'
+[2026-08-07 08:53:29] INFO: Keyword Summary for 'product switching fraud': Found=25, Duplicates Removed=3, Accepted=22
+[2026-08-07 08:53:29] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:29] INFO: [33/33] Processing Search Keyword: 'wardrobing e commerce'
+[2026-08-07 08:53:29] INFO: Querying Priority 1 (OpenAlex) for: 'wardrobing e commerce'
+[2026-08-07 08:53:31] INFO: Keyword Summary for 'decision support': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:53:31] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:31] INFO: [6/33] Processing Search Keyword: 'explainable AI'
+[2026-08-07 08:53:31] INFO: Querying Priority 1 (OpenAlex) for: 'explainable AI'
+[2026-08-07 08:53:34] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:53:35] INFO: Keyword Summary for 'explainable AI': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:53:35] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:35] INFO: [7/33] Processing Search Keyword: 'e-commerce returns'
+[2026-08-07 08:53:35] INFO: Querying Priority 1 (OpenAlex) for: 'e-commerce returns'
+[2026-08-07 08:53:38] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 08:53:38] INFO: Keyword Summary for 'e-commerce returns': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:53:38] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:38] INFO: [8/33] Processing Search Keyword: 'return authorization'
+[2026-08-07 08:53:38] INFO: Querying Priority 1 (OpenAlex) for: 'return authorization'
+[2026-08-07 08:53:42] INFO: Keyword Summary for 'return authorization': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 08:53:42] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:42] INFO: [9/33] Processing Search Keyword: 'refund fraud'
+[2026-08-07 08:53:42] INFO: Querying Priority 1 (OpenAlex) for: 'refund fraud'
+[2026-08-07 08:53:43] INFO: Keyword Summary for 'wardrobing e commerce': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 08:53:43] INFO: ======================================================================
+[2026-08-07 08:53:43] INFO: VALIDATING QUALITY & SAVING DATASET TO CSV
+[2026-08-07 08:53:43] INFO: Successfully saved dataset to C:\Users\LENOVO\Downloads\xscrapper\research_tool\output\trinetra_literature_dataset.csv. Total records: 516 (Added 516 new).
+[2026-08-07 08:53:43] INFO: ======================================================================
+[2026-08-07 08:53:43] INFO: TRINETRA LITERATURE MINING PIPELINE COMPLETE
+[2026-08-07 08:53:43] INFO: Existing Papers in CSV: 0
+[2026-08-07 08:53:43] INFO: Total Papers Discovered across APIs: 825
+[2026-08-07 08:53:43] INFO: Total Duplicates Removed: 80
+[2026-08-07 08:53:43] INFO: New Papers Saved to CSV: 516
+[2026-08-07 08:53:43] INFO: CSV File Path: C:\Users\LENOVO\Downloads\xscrapper\research_tool\output\trinetra_literature_dataset.csv
+[2026-08-07 08:53:43] INFO: Process Log Path: C:\Users\LENOVO\Downloads\xscrapper\research_tool\logs\process_log.txt
+[2026-08-07 08:53:43] INFO: ======================================================================
+[2026-08-07 08:53:48] INFO: Keyword Summary for 'refund fraud': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 08:53:48] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:48] INFO: [10/33] Processing Search Keyword: 'customer trust'
+[2026-08-07 08:53:48] INFO: Querying Priority 1 (OpenAlex) for: 'customer trust'
+[2026-08-07 08:53:53] INFO: Keyword Summary for 'customer trust': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 08:53:53] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:53] INFO: [11/33] Processing Search Keyword: 'seller trust'
+[2026-08-07 08:53:53] INFO: Querying Priority 1 (OpenAlex) for: 'seller trust'
+[2026-08-07 08:53:57] INFO: Keyword Summary for 'seller trust': Found=25, Duplicates Removed=7, Accepted=18
+[2026-08-07 08:53:57] INFO: ------------------------------------------------------------
+[2026-08-07 08:53:57] INFO: [12/33] Processing Search Keyword: 'return policies'
+[2026-08-07 08:53:57] INFO: Querying Priority 1 (OpenAlex) for: 'return policies'
+[2026-08-07 09:09:54] INFO: ======================================================================
+[2026-08-07 09:09:54] INFO: STARTING TRINETRA AI LITERATURE MINING PIPELINE
+[2026-08-07 09:09:54] INFO: ======================================================================
+[2026-08-07 09:09:54] INFO: Loaded existing CSV dataset with 177 rows from C:\Users\LENOVO\Downloads\xscrapper\research_tool\output\all_papers.csv
+[2026-08-07 09:09:54] INFO: Populated duplicate checker with 177 existing papers.
+[2026-08-07 09:09:54] INFO: ------------------------------------------------------------
+[2026-08-07 09:09:54] INFO: [1/33] Processing Search Keyword: 'return fraud'
+[2026-08-07 09:09:54] INFO: Querying Priority 1 (OpenAlex) for: 'return fraud'
+[2026-08-07 09:09:58] INFO: Keyword Summary for 'return fraud': Found=25, Duplicates Removed=3, Accepted=22
+[2026-08-07 09:09:58] INFO: ------------------------------------------------------------
+[2026-08-07 09:09:58] INFO: [2/33] Processing Search Keyword: 'return abuse'
+[2026-08-07 09:09:58] INFO: Querying Priority 1 (OpenAlex) for: 'return abuse'
+[2026-08-07 09:10:01] INFO: Keyword Summary for 'return abuse': Found=25, Duplicates Removed=0, Accepted=25
+[2026-08-07 09:10:01] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:01] INFO: [3/33] Processing Search Keyword: 'reverse logistics'
+[2026-08-07 09:10:01] INFO: Querying Priority 1 (OpenAlex) for: 'reverse logistics'
+[2026-08-07 09:10:05] INFO: Keyword Summary for 'reverse logistics': Found=25, Duplicates Removed=10, Accepted=15
+[2026-08-07 09:10:05] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:05] INFO: [4/33] Processing Search Keyword: 'consumer trust'
+[2026-08-07 09:10:05] INFO: Querying Priority 1 (OpenAlex) for: 'consumer trust'
+[2026-08-07 09:10:07] INFO: Keyword Summary for 'consumer trust': Found=25, Duplicates Removed=6, Accepted=19
+[2026-08-07 09:10:07] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:07] INFO: [5/33] Processing Search Keyword: 'decision support'
+[2026-08-07 09:10:07] INFO: Querying Priority 1 (OpenAlex) for: 'decision support'
+[2026-08-07 09:10:10] INFO: Keyword Summary for 'decision support': Found=25, Duplicates Removed=4, Accepted=21
+[2026-08-07 09:10:10] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:10] INFO: [6/33] Processing Search Keyword: 'explainable AI'
+[2026-08-07 09:10:10] INFO: Querying Priority 1 (OpenAlex) for: 'explainable AI'
+[2026-08-07 09:10:15] INFO: Keyword Summary for 'explainable AI': Found=25, Duplicates Removed=11, Accepted=14
+[2026-08-07 09:10:15] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:15] INFO: [7/33] Processing Search Keyword: 'e-commerce returns'
+[2026-08-07 09:10:15] INFO: Querying Priority 1 (OpenAlex) for: 'e-commerce returns'
+[2026-08-07 09:10:19] INFO: Keyword Summary for 'e-commerce returns': Found=25, Duplicates Removed=9, Accepted=16
+[2026-08-07 09:10:19] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:19] INFO: [8/33] Processing Search Keyword: 'return authorization'
+[2026-08-07 09:10:19] INFO: Querying Priority 1 (OpenAlex) for: 'return authorization'
+[2026-08-07 09:10:22] INFO: Keyword Summary for 'return authorization': Found=25, Duplicates Removed=4, Accepted=21
+[2026-08-07 09:10:22] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:22] INFO: [9/33] Processing Search Keyword: 'refund fraud'
+[2026-08-07 09:10:22] INFO: Querying Priority 1 (OpenAlex) for: 'refund fraud'
+[2026-08-07 09:10:24] INFO: Keyword Summary for 'refund fraud': Found=25, Duplicates Removed=9, Accepted=16
+[2026-08-07 09:10:24] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:24] INFO: [10/33] Processing Search Keyword: 'customer trust'
+[2026-08-07 09:10:24] INFO: Querying Priority 1 (OpenAlex) for: 'customer trust'
+[2026-08-07 09:10:28] INFO: Keyword Summary for 'customer trust': Found=25, Duplicates Removed=14, Accepted=11
+[2026-08-07 09:10:28] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:28] INFO: [11/33] Processing Search Keyword: 'seller trust'
+[2026-08-07 09:10:28] INFO: Querying Priority 1 (OpenAlex) for: 'seller trust'
+[2026-08-07 09:10:30] INFO: Keyword Summary for 'seller trust': Found=25, Duplicates Removed=11, Accepted=14
+[2026-08-07 09:10:30] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:30] INFO: [12/33] Processing Search Keyword: 'return policies'
+[2026-08-07 09:10:30] INFO: Querying Priority 1 (OpenAlex) for: 'return policies'
+[2026-08-07 09:10:34] INFO: Keyword Summary for 'return policies': Found=25, Duplicates Removed=7, Accepted=18
+[2026-08-07 09:10:34] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:34] INFO: [13/33] Processing Search Keyword: 'post purchase experience'
+[2026-08-07 09:10:34] INFO: Querying Priority 1 (OpenAlex) for: 'post purchase experience'
+[2026-08-07 09:10:39] INFO: Keyword Summary for 'post purchase experience': Found=25, Duplicates Removed=6, Accepted=19
+[2026-08-07 09:10:39] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:39] INFO: [14/33] Processing Search Keyword: 'e-commerce dispute resolution'
+[2026-08-07 09:10:39] INFO: Querying Priority 1 (OpenAlex) for: 'e-commerce dispute resolution'
+[2026-08-07 09:10:44] INFO: Keyword Summary for 'e-commerce dispute resolution': Found=25, Duplicates Removed=16, Accepted=9
+[2026-08-07 09:10:44] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:44] INFO: [15/33] Processing Search Keyword: 'evidence based decision making'
+[2026-08-07 09:10:44] INFO: Querying Priority 1 (OpenAlex) for: 'evidence based decision making'
+[2026-08-07 09:10:53] INFO: Keyword Summary for 'evidence based decision making': Found=25, Duplicates Removed=4, Accepted=21
+[2026-08-07 09:10:53] INFO: ------------------------------------------------------------
+[2026-08-07 09:10:53] INFO: [16/33] Processing Search Keyword: 'human in the loop AI'
+[2026-08-07 09:10:53] INFO: Querying Priority 1 (OpenAlex) for: 'human in the loop AI'
+[2026-08-07 09:11:12] INFO: Keyword Summary for 'human in the loop AI': Found=25, Duplicates Removed=6, Accepted=19
+[2026-08-07 09:11:12] INFO: ------------------------------------------------------------
+[2026-08-07 09:11:12] INFO: [17/33] Processing Search Keyword: 'explainable recommendation'
+[2026-08-07 09:11:12] INFO: Querying Priority 1 (OpenAlex) for: 'explainable recommendation'
+[2026-08-07 09:11:18] INFO: Keyword Summary for 'explainable recommendation': Found=25, Duplicates Removed=17, Accepted=8
+[2026-08-07 09:11:18] INFO: ------------------------------------------------------------
+[2026-08-07 09:11:18] INFO: [18/33] Processing Search Keyword: 'fraud prevention'
+[2026-08-07 09:11:18] INFO: Querying Priority 1 (OpenAlex) for: 'fraud prevention'
+[2026-08-07 09:11:26] INFO: Keyword Summary for 'fraud prevention': Found=25, Duplicates Removed=17, Accepted=8
+[2026-08-07 09:11:26] INFO: ------------------------------------------------------------
+[2026-08-07 09:11:26] INFO: [19/33] Processing Search Keyword: 'online retail returns'
+[2026-08-07 09:11:26] INFO: Querying Priority 1 (OpenAlex) for: 'online retail returns'
+[2026-08-07 09:11:32] INFO: Keyword Summary for 'online retail returns': Found=25, Duplicates Removed=7, Accepted=18
+[2026-08-07 09:11:32] INFO: ------------------------------------------------------------
+[2026-08-07 09:11:32] INFO: [20/33] Processing Search Keyword: 'product return management'
+[2026-08-07 09:11:32] INFO: Querying Priority 1 (OpenAlex) for: 'product return management'
+[2026-08-07 09:11:43] INFO: Keyword Summary for 'product return management': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 09:11:43] INFO: ------------------------------------------------------------
+[2026-08-07 09:11:43] INFO: [21/33] Processing Search Keyword: 'e-commerce return fraud'
+[2026-08-07 09:11:43] INFO: Querying Priority 1 (OpenAlex) for: 'e-commerce return fraud'
+[2026-08-07 09:11:47] INFO: Keyword Summary for 'e-commerce return fraud': Found=25, Duplicates Removed=6, Accepted=19
+[2026-08-07 09:11:47] INFO: ------------------------------------------------------------
+[2026-08-07 09:11:47] INFO: [22/33] Processing Search Keyword: 'adaptive verification dispute'
+[2026-08-07 09:11:47] INFO: Querying Priority 1 (OpenAlex) for: 'adaptive verification dispute'
+[2026-08-07 09:11:54] INFO: Keyword Summary for 'adaptive verification dispute': Found=25, Duplicates Removed=5, Accepted=20
+[2026-08-07 09:11:54] INFO: ------------------------------------------------------------
+[2026-08-07 09:11:54] INFO: [23/33] Processing Search Keyword: 'evidence orchestration dispute'
+[2026-08-07 09:11:54] INFO: Querying Priority 1 (OpenAlex) for: 'evidence orchestration dispute'
+[2026-08-07 09:12:05] INFO: Keyword Summary for 'evidence orchestration dispute': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 09:12:05] INFO: ------------------------------------------------------------
+[2026-08-07 09:12:05] INFO: [24/33] Processing Search Keyword: 'multi stakeholder trust e commerce'
+[2026-08-07 09:12:05] INFO: Querying Priority 1 (OpenAlex) for: 'multi stakeholder trust e commerce'
+[2026-08-07 09:12:13] INFO: Keyword Summary for 'multi stakeholder trust e commerce': Found=25, Duplicates Removed=5, Accepted=20
+[2026-08-07 09:12:13] INFO: ------------------------------------------------------------
+[2026-08-07 09:12:13] INFO: [25/33] Processing Search Keyword: 'explainable decision support return'
+[2026-08-07 09:12:13] INFO: Querying Priority 1 (OpenAlex) for: 'explainable decision support return'
+[2026-08-07 09:12:19] INFO: Keyword Summary for 'explainable decision support return': Found=25, Duplicates Removed=9, Accepted=16
+[2026-08-07 09:12:19] INFO: ------------------------------------------------------------
+[2026-08-07 09:12:19] INFO: [26/33] Processing Search Keyword: 'customer trust dispute resolution'
+[2026-08-07 09:12:19] INFO: Querying Priority 1 (OpenAlex) for: 'customer trust dispute resolution'
+[2026-08-07 09:12:23] INFO: Keyword Summary for 'customer trust dispute resolution': Found=25, Duplicates Removed=12, Accepted=13
+[2026-08-07 09:12:23] INFO: ------------------------------------------------------------
+[2026-08-07 09:12:23] INFO: [27/33] Processing Search Keyword: 'retail return policy abuse'
+[2026-08-07 09:12:23] INFO: Querying Priority 1 (OpenAlex) for: 'retail return policy abuse'
+[2026-08-07 09:12:28] INFO: Keyword Summary for 'retail return policy abuse': Found=25, Duplicates Removed=4, Accepted=21
+[2026-08-07 09:12:28] INFO: ------------------------------------------------------------
+[2026-08-07 09:12:28] INFO: [28/33] Processing Search Keyword: 'seller protection return fraud'
+[2026-08-07 09:12:28] INFO: Querying Priority 1 (OpenAlex) for: 'seller protection return fraud'
+[2026-08-07 09:12:33] INFO: Keyword Summary for 'seller protection return fraud': Found=25, Duplicates Removed=7, Accepted=18
+[2026-08-07 09:12:33] INFO: ------------------------------------------------------------
+[2026-08-07 09:12:33] INFO: [29/33] Processing Search Keyword: 'warehouse verification return'
+[2026-08-07 09:12:33] INFO: Querying Priority 1 (OpenAlex) for: 'warehouse verification return'
+[2026-08-07 09:12:40] INFO: Keyword Summary for 'warehouse verification return': Found=25, Duplicates Removed=2, Accepted=23
+[2026-08-07 09:12:40] INFO: ------------------------------------------------------------
+[2026-08-07 09:12:40] INFO: [30/33] Processing Search Keyword: 'post purchase dispute resolution'
+[2026-08-07 09:12:40] INFO: Querying Priority 1 (OpenAlex) for: 'post purchase dispute resolution'
+[2026-08-07 09:12:40] WARNING: [OpenAlex] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 09:12:40] INFO: Querying Priority 2 (Semantic Scholar) for: 'post purchase dispute resolution'
+[2026-08-07 09:12:43] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 09:12:43] INFO: Querying Priority 3 (Crossref) for: 'post purchase dispute resolution'
+[2026-08-07 09:12:46] INFO: Keyword Summary for 'post purchase dispute resolution': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 09:12:46] INFO: ------------------------------------------------------------
+[2026-08-07 09:12:46] INFO: [31/33] Processing Search Keyword: 'e commerce dispute trust'
+[2026-08-07 09:12:46] INFO: Querying Priority 1 (OpenAlex) for: 'e commerce dispute trust'
+[2026-08-07 09:12:47] WARNING: [OpenAlex] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 09:12:47] INFO: Querying Priority 2 (Semantic Scholar) for: 'e commerce dispute trust'
+[2026-08-07 09:12:49] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 09:12:49] INFO: Querying Priority 3 (Crossref) for: 'e commerce dispute trust'
+[2026-08-07 09:12:51] INFO: Keyword Summary for 'e commerce dispute trust': Found=25, Duplicates Removed=3, Accepted=22
+[2026-08-07 09:12:51] INFO: ------------------------------------------------------------
+[2026-08-07 09:12:51] INFO: [32/33] Processing Search Keyword: 'product switching fraud'
+[2026-08-07 09:12:51] INFO: Querying Priority 1 (OpenAlex) for: 'product switching fraud'
+[2026-08-07 09:12:52] WARNING: [OpenAlex] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 09:12:52] INFO: Querying Priority 2 (Semantic Scholar) for: 'product switching fraud'
+[2026-08-07 09:12:53] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 09:12:53] INFO: Querying Priority 3 (Crossref) for: 'product switching fraud'
+[2026-08-07 09:12:56] INFO: Keyword Summary for 'product switching fraud': Found=25, Duplicates Removed=1, Accepted=24
+[2026-08-07 09:12:56] INFO: ------------------------------------------------------------
+[2026-08-07 09:12:56] INFO: [33/33] Processing Search Keyword: 'wardrobing e commerce'
+[2026-08-07 09:12:56] INFO: Querying Priority 1 (OpenAlex) for: 'wardrobing e commerce'
+[2026-08-07 09:12:57] WARNING: [OpenAlex] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 09:12:57] INFO: Querying Priority 2 (Semantic Scholar) for: 'wardrobing e commerce'
+[2026-08-07 09:12:58] WARNING: [SemanticScholar] Rate limited (429). Skipping fallback query for this item.
+[2026-08-07 09:12:58] INFO: Querying Priority 3 (Crossref) for: 'wardrobing e commerce'
+[2026-08-07 09:13:00] INFO: Keyword Summary for 'wardrobing e commerce': Found=25, Duplicates Removed=16, Accepted=9
+[2026-08-07 09:13:00] INFO: ======================================================================
+[2026-08-07 09:13:00] INFO: VALIDATING QUALITY & SAVING DATASET TO CSV
+[2026-08-07 09:13:00] INFO: [Dataset A] Saved 484 total records to C:\Users\LENOVO\Downloads\xscrapper\research_tool\output\all_papers.csv (307 new).
+[2026-08-07 09:13:00] INFO: [Dataset B] relevant_papers.csv — 184 papers saved.
+[2026-08-07 09:13:00] INFO: [Dataset C] core_trinetra.csv — top 70 papers saved with 11 annotation columns.
+[2026-08-07 09:13:00] INFO: ======================================================================
+[2026-08-07 09:13:00] INFO: TRINETRA LITERATURE MINING PIPELINE COMPLETE
+[2026-08-07 09:13:00] INFO: Existing Papers in CSV: 177
+[2026-08-07 09:13:00] INFO: Total Papers Discovered across APIs: 825
+[2026-08-07 09:13:00] INFO: Total Duplicates Removed: 235
+[2026-08-07 09:13:00] INFO: New Papers Saved to CSV:          307
+[2026-08-07 09:13:00] INFO: [Dataset A] all_papers.csv:       C:\Users\LENOVO\Downloads\xscrapper\research_tool\output\all_papers.csv
+[2026-08-07 09:13:00] INFO: [Dataset B] relevant_papers.csv:  C:\Users\LENOVO\Downloads\xscrapper\research_tool\output\relevant_papers.csv
+[2026-08-07 09:13:00] INFO: [Dataset C] core_trinetra.csv:    C:\Users\LENOVO\Downloads\xscrapper\research_tool\output\core_trinetra.csv
+[2026-08-07 09:13:00] INFO: Process Log: C:\Users\LENOVO\Downloads\xscrapper\research_tool\logs\process_log.txt
+[2026-08-07 09:13:00] INFO: ======================================================================
+[2026-08-22 20:24:04] INFO: ======================================================================
+[2026-08-22 20:24:04] INFO: STARTING TRINETRA AI RESEARCH LITERATURE SCRAPER PIPELINE
+[2026-08-22 20:24:04] INFO: ======================================================================
+[2026-08-22 20:24:04] INFO: Loaded existing dataset with 177 rows from C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\output\trinetra_literature_dataset.csv
+[2026-08-22 20:24:04] INFO: Populated duplicate checker with 177 existing records.
+[2026-08-22 20:24:04] INFO: Existing dataset has 177 total papers (164 relevant with Score >= 5.0)
+[2026-08-22 20:24:04] INFO: ======================================================================
+[2026-08-22 20:24:04] INFO: STARTING SEARCH FOR TIER 1 (27 Core Keywords)
+[2026-08-22 20:24:04] INFO: ======================================================================
+[2026-08-22 20:24:04] INFO: Target condition met: 164 relevant papers (Score >= 5.0), 0 total added. Stopping search.
+[2026-08-22 20:24:04] INFO: ======================================================================
+[2026-08-22 20:24:04] INFO: TRINETRA RESEARCH LITERATURE SCRAPER COMPLETE
+[2026-08-22 20:24:04] INFO: Total Papers Discovered & Processed: 0
+[2026-08-22 20:24:04] INFO: Total Duplicates Removed:          0
+[2026-08-22 20:24:04] INFO: Total Papers in Master Dataset:     177
+[2026-08-22 20:24:04] INFO: Total Relevant Papers (Score >= 5): 164
+[2026-08-22 20:24:04] INFO: [Master Dataset CSV] C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\output\trinetra_literature_dataset.csv
+[2026-08-22 20:24:04] INFO: [Relevant Papers CSV] C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\output\relevant_papers.csv
+[2026-08-22 20:24:04] INFO: Process Log:          C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\logs\process_log.txt
+[2026-08-22 20:24:04] INFO: ======================================================================
+[2026-08-22 20:24:30] INFO: ======================================================================
+[2026-08-22 20:24:30] INFO: STARTING TRINETRA AI RESEARCH LITERATURE SCRAPER PIPELINE
+[2026-08-22 20:24:30] INFO: ======================================================================
+[2026-08-22 20:24:30] INFO: Loaded existing dataset with 177 rows from C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\output\trinetra_literature_dataset.csv
+[2026-08-22 20:24:30] INFO: Populated duplicate checker with 177 existing records.
+[2026-08-22 20:24:30] INFO: Existing dataset has 177 total papers (83 relevant with Score >= 5.0)
+[2026-08-22 20:24:30] INFO: ======================================================================
+[2026-08-22 20:24:30] INFO: STARTING SEARCH FOR TIER 1 (27 Core Keywords)
+[2026-08-22 20:24:30] INFO: ======================================================================
+[2026-08-22 20:24:30] INFO: [1/27] Keyword: 'cross-organizational evidence reconciliation'
+[2026-08-22 20:24:30] INFO: Querying Priority 1 (OpenAlex) for: 'cross-organizational evidence reconciliation'
+[2026-08-22 20:24:33] INFO: [2/27] Keyword: 'multi-source evidence reconciliation'
+[2026-08-22 20:24:33] INFO: Querying Priority 1 (OpenAlex) for: 'multi-source evidence reconciliation'
+[2026-08-22 20:24:36] INFO: [3/27] Keyword: 'evidence fusion supply chain'
+[2026-08-22 20:24:36] INFO: Querying Priority 1 (OpenAlex) for: 'evidence fusion supply chain'
+[2026-08-22 20:24:39] INFO: [1/184] Papers processed: 78, Added: 1 (84 relevant), Duplicates removed: 6
+[2026-08-22 20:24:39] INFO: [4/27] Keyword: 'product verification e-commerce'
+[2026-08-22 20:24:39] INFO: Querying Priority 1 (OpenAlex) for: 'product verification e-commerce'
+[2026-08-22 20:24:42] INFO: [2/184] Papers processed: 93, Added: 2 (85 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [3/184] Papers processed: 95, Added: 3 (86 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [4/184] Papers processed: 97, Added: 4 (87 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [5/184] Papers processed: 101, Added: 5 (88 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [6/184] Papers processed: 103, Added: 6 (89 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [7/184] Papers processed: 105, Added: 7 (90 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [8/184] Papers processed: 106, Added: 8 (91 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [9/184] Papers processed: 109, Added: 9 (92 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [10/184] Papers processed: 110, Added: 10 (93 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [11/184] Papers processed: 115, Added: 11 (94 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [12/184] Papers processed: 116, Added: 12 (95 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [13/184] Papers processed: 117, Added: 13 (96 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [14/184] Papers processed: 118, Added: 14 (97 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [15/184] Papers processed: 119, Added: 15 (98 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [16/184] Papers processed: 120, Added: 16 (99 relevant), Duplicates removed: 6
+[2026-08-22 20:24:42] INFO: [5/27] Keyword: 'warehouse pack verification'
+[2026-08-22 20:24:42] INFO: Querying Priority 1 (OpenAlex) for: 'warehouse pack verification'
+[2026-08-22 20:24:45] INFO: [17/184] Papers processed: 144, Added: 17 (100 relevant), Duplicates removed: 6
+[2026-08-22 20:24:46] INFO: [6/27] Keyword: 'order packing verification'
+[2026-08-22 20:24:46] INFO: Querying Priority 1 (OpenAlex) for: 'order packing verification'
+[2026-08-22 20:24:49] INFO: [7/27] Keyword: 'product-content verification'
+[2026-08-22 20:24:49] INFO: Querying Priority 1 (OpenAlex) for: 'product-content verification'
+[2026-08-22 20:24:52] INFO: [8/27] Keyword: 'multi-stakeholder product verification'
+[2026-08-22 20:24:52] INFO: Querying Priority 1 (OpenAlex) for: 'multi-stakeholder product verification'
+[2026-08-22 20:24:54] INFO: [18/184] Papers processed: 212, Added: 18 (101 relevant), Duplicates removed: 12
+[2026-08-22 20:24:54] INFO: [19/184] Papers processed: 213, Added: 19 (102 relevant), Duplicates removed: 12
+[2026-08-22 20:24:54] INFO: [20/184] Papers processed: 218, Added: 20 (103 relevant), Duplicates removed: 13
+[2026-08-22 20:24:54] INFO: [21/184] Papers processed: 228, Added: 21 (104 relevant), Duplicates removed: 13
+[2026-08-22 20:24:55] INFO: [9/27] Keyword: 'product traceability e-commerce'
+[2026-08-22 20:24:55] INFO: Querying Priority 1 (OpenAlex) for: 'product traceability e-commerce'
+[2026-08-22 20:24:57] INFO: [22/184] Papers processed: 252, Added: 22 (105 relevant), Duplicates removed: 17
+[2026-08-22 20:24:57] INFO: [23/184] Papers processed: 254, Added: 23 (106 relevant), Duplicates removed: 17
+[2026-08-22 20:24:57] INFO: [24/184] Papers processed: 257, Added: 24 (107 relevant), Duplicates removed: 18
+[2026-08-22 20:24:58] INFO: [25/184] Papers processed: 259, Added: 25 (108 relevant), Duplicates removed: 18
+[2026-08-22 20:24:58] INFO: [26/184] Papers processed: 263, Added: 26 (109 relevant), Duplicates removed: 18
+[2026-08-22 20:24:58] INFO: [27/184] Papers processed: 264, Added: 27 (110 relevant), Duplicates removed: 18
+[2026-08-22 20:24:58] INFO: [28/184] Papers processed: 265, Added: 28 (111 relevant), Duplicates removed: 18
+[2026-08-22 20:24:58] INFO: [29/184] Papers processed: 266, Added: 29 (112 relevant), Duplicates removed: 18
+[2026-08-22 20:24:58] INFO: [30/184] Papers processed: 267, Added: 30 (113 relevant), Duplicates removed: 18
+[2026-08-22 20:24:58] INFO: [31/184] Papers processed: 269, Added: 31 (114 relevant), Duplicates removed: 18
+[2026-08-22 20:24:58] INFO: [10/27] Keyword: 'product identity verification'
+[2026-08-22 20:24:58] INFO: Querying Priority 1 (OpenAlex) for: 'product identity verification'
+[2026-08-22 20:25:01] INFO: [11/27] Keyword: 'supply chain evidence'
+[2026-08-22 20:25:01] INFO: Querying Priority 1 (OpenAlex) for: 'supply chain evidence'
+[2026-08-22 20:25:05] INFO: [32/184] Papers processed: 329, Added: 32 (115 relevant), Duplicates removed: 24
+[2026-08-22 20:25:05] INFO: [12/27] Keyword: 'product provenance'
+[2026-08-22 20:25:05] INFO: Querying Priority 1 (OpenAlex) for: 'product provenance'
+[2026-08-22 20:25:07] INFO: [33/184] Papers processed: 348, Added: 33 (116 relevant), Duplicates removed: 25
+[2026-08-22 20:25:07] INFO: [34/184] Papers processed: 354, Added: 34 (117 relevant), Duplicates removed: 25
+[2026-08-22 20:25:08] INFO: [13/27] Keyword: 'supply chain provenance'
+[2026-08-22 20:25:08] INFO: Querying Priority 1 (OpenAlex) for: 'supply chain provenance'
+[2026-08-22 20:25:10] INFO: [35/184] Papers processed: 363, Added: 35 (118 relevant), Duplicates removed: 25
+[2026-08-22 20:25:10] INFO: [36/184] Papers processed: 366, Added: 36 (119 relevant), Duplicates removed: 27
+[2026-08-22 20:25:10] INFO: [37/184] Papers processed: 372, Added: 37 (120 relevant), Duplicates removed: 28
+[2026-08-22 20:25:10] INFO: [38/184] Papers processed: 373, Added: 38 (121 relevant), Duplicates removed: 28
+[2026-08-22 20:25:11] INFO: [39/184] Papers processed: 378, Added: 39 (122 relevant), Duplicates removed: 28
+[2026-08-22 20:25:11] INFO: [40/184] Papers processed: 380, Added: 40 (123 relevant), Duplicates removed: 28
+[2026-08-22 20:25:11] INFO: [41/184] Papers processed: 390, Added: 41 (124 relevant), Duplicates removed: 29
+[2026-08-22 20:25:11] INFO: [14/27] Keyword: 'product authentication e-commerce'
+[2026-08-22 20:25:11] INFO: Querying Priority 1 (OpenAlex) for: 'product authentication e-commerce'
+[2026-08-22 20:25:13] INFO: [42/184] Papers processed: 392, Added: 42 (125 relevant), Duplicates removed: 30
+[2026-08-22 20:25:13] INFO: [43/184] Papers processed: 401, Added: 43 (126 relevant), Duplicates removed: 32
+[2026-08-22 20:25:13] INFO: [44/184] Papers processed: 402, Added: 44 (127 relevant), Duplicates removed: 32
+[2026-08-22 20:25:13] INFO: [45/184] Papers processed: 405, Added: 45 (128 relevant), Duplicates removed: 32
+[2026-08-22 20:25:14] INFO: [46/184] Papers processed: 411, Added: 46 (129 relevant), Duplicates removed: 32
+[2026-08-22 20:25:14] INFO: [47/184] Papers processed: 414, Added: 47 (130 relevant), Duplicates removed: 32
+[2026-08-22 20:25:14] INFO: [48/184] Papers processed: 416, Added: 48 (131 relevant), Duplicates removed: 32
+[2026-08-22 20:25:14] INFO: [49/184] Papers processed: 417, Added: 49 (132 relevant), Duplicates removed: 32
+[2026-08-22 20:25:14] INFO: [15/27] Keyword: 'counterfeit prevention e-commerce'
+[2026-08-22 20:25:14] INFO: Querying Priority 1 (OpenAlex) for: 'counterfeit prevention e-commerce'
+[2026-08-22 20:25:16] INFO: [50/184] Papers processed: 421, Added: 50 (133 relevant), Duplicates removed: 32
+[2026-08-22 20:25:16] INFO: Saved 227 total records to C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\output\trinetra_literature_dataset.csv
+[2026-08-22 20:25:16] INFO: Saved 133 relevant records (score >= 5.0) to C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\output\relevant_papers.csv
+[2026-08-22 20:25:16] INFO: AUTO-SAVE TRIGGERED: Successfully saved 50 new papers.
+[2026-08-22 20:25:17] INFO: [51/184] Papers processed: 423, Added: 51 (134 relevant), Duplicates removed: 32
+[2026-08-22 20:25:17] INFO: [52/184] Papers processed: 425, Added: 52 (135 relevant), Duplicates removed: 32
+[2026-08-22 20:25:17] INFO: [53/184] Papers processed: 426, Added: 53 (136 relevant), Duplicates removed: 32
+[2026-08-22 20:25:17] INFO: [54/184] Papers processed: 427, Added: 54 (137 relevant), Duplicates removed: 32
+[2026-08-22 20:25:17] INFO: [55/184] Papers processed: 429, Added: 55 (138 relevant), Duplicates removed: 32
+[2026-08-22 20:25:17] INFO: [56/184] Papers processed: 430, Added: 56 (139 relevant), Duplicates removed: 32
+[2026-08-22 20:25:17] INFO: [57/184] Papers processed: 433, Added: 57 (140 relevant), Duplicates removed: 32
+[2026-08-22 20:25:17] INFO: [58/184] Papers processed: 434, Added: 58 (141 relevant), Duplicates removed: 32
+[2026-08-22 20:25:17] INFO: [59/184] Papers processed: 435, Added: 59 (142 relevant), Duplicates removed: 32
+[2026-08-22 20:25:18] INFO: [60/184] Papers processed: 439, Added: 60 (143 relevant), Duplicates removed: 33
+[2026-08-22 20:25:18] INFO: [61/184] Papers processed: 441, Added: 61 (144 relevant), Duplicates removed: 33
+[2026-08-22 20:25:18] INFO: [62/184] Papers processed: 449, Added: 62 (145 relevant), Duplicates removed: 33
+[2026-08-22 20:25:18] INFO: [16/27] Keyword: 'return dispute evidence'
+[2026-08-22 20:25:18] INFO: Querying Priority 1 (OpenAlex) for: 'return dispute evidence'
+[2026-08-22 20:25:22] INFO: [17/27] Keyword: 'return fraud evidence'
+[2026-08-22 20:25:22] INFO: Querying Priority 1 (OpenAlex) for: 'return fraud evidence'
+[2026-08-22 20:25:25] INFO: [18/27] Keyword: 'return abuse'
+[2026-08-22 20:25:25] INFO: Querying Priority 1 (OpenAlex) for: 'return abuse'
+[2026-08-22 20:25:29] INFO: [19/27] Keyword: 'e-commerce dispute resolution'
+[2026-08-22 20:25:29] INFO: Querying Priority 1 (OpenAlex) for: 'e-commerce dispute resolution'
+[2026-08-22 20:25:31] INFO: [63/184] Papers processed: 541, Added: 63 (146 relevant), Duplicates removed: 37
+[2026-08-22 20:25:32] INFO: [64/184] Papers processed: 552, Added: 64 (147 relevant), Duplicates removed: 44
+[2026-08-22 20:25:32] INFO: [65/184] Papers processed: 554, Added: 65 (148 relevant), Duplicates removed: 45
+[2026-08-22 20:25:32] INFO: [66/184] Papers processed: 565, Added: 66 (149 relevant), Duplicates removed: 52
+[2026-08-22 20:25:32] INFO: [67/184] Papers processed: 567, Added: 67 (150 relevant), Duplicates removed: 52
+[2026-08-22 20:25:32] INFO: Target condition met: 150 relevant papers (Score >= 5.0), 67 total added. Stopping search.
+[2026-08-22 20:25:32] INFO: Saved 244 total records to C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\output\trinetra_literature_dataset.csv
+[2026-08-22 20:25:32] INFO: Saved 150 relevant records (score >= 5.0) to C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\output\relevant_papers.csv
+[2026-08-22 20:25:32] INFO: FINAL BATCH SAVE: Successfully saved 17 new papers.
+[2026-08-22 20:25:32] INFO: ======================================================================
+[2026-08-22 20:25:32] INFO: TRINETRA RESEARCH LITERATURE SCRAPER COMPLETE
+[2026-08-22 20:25:32] INFO: Total Papers Discovered & Processed: 567
+[2026-08-22 20:25:32] INFO: Total Duplicates Removed:          52
+[2026-08-22 20:25:32] INFO: Total Papers in Master Dataset:     244
+[2026-08-22 20:25:32] INFO: Total Relevant Papers (Score >= 5): 150
+[2026-08-22 20:25:32] INFO: [Master Dataset CSV] C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\output\trinetra_literature_dataset.csv
+[2026-08-22 20:25:32] INFO: [Relevant Papers CSV] C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\output\relevant_papers.csv
+[2026-08-22 20:25:32] INFO: Process Log:          C:\Users\mitsu\Downloads\xscrapper\xscrapper\research_tool\logs\process_log.txt
+[2026-08-22 20:25:32] INFO: ======================================================================

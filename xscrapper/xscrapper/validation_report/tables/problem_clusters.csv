@@ -1,0 +1,11 @@
+﻿Cluster_Name,Frequency,Percentage,TriNetra_Research_Relevance
+Trust Issues,98,60.49%,Validates Multi-Stakeholder Trust Score module and seller risk profiling.
+Refund Issues,22,13.58%,Validates Case Timeline tracking and automated refund trigger mechanics.
+Return Abuse,11,6.79%,Validates Adaptive Verification & Evidence Consistency to detect fraudulent returns.
+Seller Problems,0,0.0%,Validates Marketplace Dashboard & Seller Verification infrastructure.
+Delivery Problems,16,9.88%,Validates Reverse Logistics integration and courier tracking verification.
+Verification Problems,0,0.0%,"Validates Evidence Collection (unboxing proof, serial number matching)."
+Customer Service,7,4.32%,Validates Human Review co-pilot & Explainability decision support.
+Policy Problems,8,4.94%,Validates Dynamic & Transparent Return Policy orchestration.
+Marketplace Transparency,0,0.0%,Validates Transparent Decision Support and dispute audit trails.
+Evidence Problems,0,0.0%,Validates Evidence Consistency Engine & multi-modal proof analysis.

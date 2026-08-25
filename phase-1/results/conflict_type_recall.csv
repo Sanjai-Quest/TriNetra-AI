@@ -1,0 +1,7 @@
+Conflict_Type,Count,Baseline_1_Recall,Baseline_2_Recall,Baseline_3_Recall,TriNetra_Recall
+NONE,900,0.0%,0.0%,0.0%,0.0%
+IDENTITY_CONFLICT,30,100.0%,0.0%,0.0%,100.0%
+WEIGHT_ANOMALY,40,0.0%,100.0%,0.0%,100.0%
+TEMPORAL_CONFLICT,15,0.0%,0.0%,100.0%,100.0%
+VARIANT_CONFLICT,10,0.0%,0.0%,0.0%,100.0%
+MISSING_EVIDENCE,5,0.0%,0.0%,0.0%,0.0%

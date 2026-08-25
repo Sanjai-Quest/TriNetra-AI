@@ -1,0 +1,11 @@
+Metric,Baseline1_Identity,Baseline2_Weight,Baseline3_Timeline,TriNetra_MultiSource
+True Positives (TP),30,40,15,95
+False Positives (FP),0,0,0,0
+True Negatives (TN),905,905,905,905
+False Negatives (FN),65,55,80,0
+Precision,1.0000,1.0000,1.0000,1.0000
+Recall,0.3158,0.4211,0.1579,1.0000
+F1 Score,0.4800,0.5926,0.2727,1.0000
+False Positive Rate (FPR),0.0000,0.0000,0.0000,0.0000
+False Negative Rate (FNR),0.6842,0.5789,0.8421,0.0000
+FN Reduction vs Best Baseline,0.0%,0.0%,0.0%,100.0%

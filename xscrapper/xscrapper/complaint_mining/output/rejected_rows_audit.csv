@@ -1,0 +1,42 @@
+Row_Index,Title,URL,Reason
+0,Counterfeit,https://en.wikipedia.org/wiki/Counterfeit,Matched non-complaint pattern: wikipedia\.org
+1,COUNTERFEIT Simple Definition,https://www.merriam-webster.com/simple/counterfeit,Matched non-complaint pattern: merriam-webster
+2,Buy & Sell Used Items in India,https://www.secondhandbazaar.in/,Matched non-complaint pattern: secondhandbazaar
+3,How to Solve Common Delivery Failures & Preventions,https://blog.bigship.direct/failed-delivery-attempts-solutions/,Matched non-complaint pattern: bigship
+4,What Does Failed Delivery Mean? How To Solve It in 2026,https://www.eshipz.com/blog/failed-delivery-attempts-2026/,Matched non-complaint pattern: eshipz
+5,"""Delivery Failed"" in India Post tracking, means?",https://trackpost.in/status/attempt-failed/,Matched non-complaint pattern: trackpost
+6,Failed Delivery Attempt,https://blog.eurosender.com/failed-delivery-attempt-how-it-happens-and-what-to-do/,Matched non-complaint pattern: eurosender
+7,Failed Delivery Attempt Meaning,https://www.couriertracking.in/failed-delivery-attempt/,Matched non-complaint pattern: couriertracking
+8,Failed Delivery Attempts: Solutions & Prevention,https://www.shiprocket.in/blog/failed-delivery-attempts-solutions/,Matched non-complaint pattern: shiprocket
+9,How to handle failed delivery attempts from couriers,https://www.ship24.com/help/how-to-handle-failed-delivery-attempts-from-couriers,Matched non-complaint pattern: ship24
+10,How to fix Delivery has failed to these recipients or groups,https://learn.microsoft.com/en-us/answers/questions/5614701/how-to-fix-delivery-has-failed-to-these-recipients,Matched non-complaint pattern: learn\.microsoft\.com
+11,What is Customer Support? (A Detailed 2026 Guide),https://hiverhq.com/customer-support-guide,Matched non-complaint pattern: hiverhq
+12,Official HP® Support,https://support.hp.com/in-en,Matched non-complaint pattern: hp\.com
+13,What Is Customer Service? Definition And Best Practices,https://www.forbes.com/advisor/business/what-is-customer-service-definition-best-practices/,Matched non-complaint pattern: forbes\.com
+14,"Customer support: Definition, importance + strategies",https://blog.hubspot.com/service/customer-support,Matched non-complaint pattern: hubspot\.com
+15,What is customer support?,https://www.ibm.com/think/topics/customer-support,Matched non-complaint pattern: ibm\.com
+16,Customer Care,https://www.samsung.com/in/support/contact/,Matched non-complaint pattern: samsung\.com
+17,"Replacement China Patterns, Flatware, and Crystal",https://www.replacements.com/,Matched non-complaint pattern: replacements\.com
+18,Free Return & Refund Policy Template & Examples [PDF+DOC],https://www.websitepolicies.com/blog/sample-return-refund-policy-template,Matched non-complaint pattern: websitepolicies
+20,Free Return & Refund Policy Generator,https://www.shiprocket.in/return-refund-policy-generator/,Matched non-complaint pattern: shiprocket
+21,Return Policy,https://www.flipkart.com/pages/returnpolicy,Matched non-complaint pattern: return\s*policy\s*-\s*flipkart\.com
+22,Free Refund Policy Template,https://easylegaldocs.com/templates/policies/refund-policy/,Matched non-complaint pattern: easylegaldocs
+23,Marketplace,https://www.facebook.com/marketplace/,Matched non-complaint pattern: facebook\.com/marketplace/?$
+24,Your Go,https://www.mercari.com/,Lacks user complaint grievance signal
+25,Classified Items For Sale,https://apps.facebook.com/marketplace/category/classifieds/,Lacks user complaint grievance signal
+26,Facebook Marketplace Category Directory,https://l.facebook.com/marketplace/categories/,Matched non-complaint pattern: facebook\.com/marketplace/categories
+27,Track Your Order,https://www.trackingmore.com/track,Lacks user complaint grievance signal
+31,How to Claim GST Refund India: Step,https://www.mygstrefund.com/blog/gst-refund-process-rfd-01-to-rfd-06,Matched non-complaint pattern: guide
+36,Courier Services in Balianta,https://www.uber.com/in/en/b/courier-services/balianta-odisha-in/,Lacks user complaint grievance signal
+38,"7,000+ Openings For Customer Support jobs in Bengaluru",https://www.linkedin.com/jobs/openings-for-customer-support-jobs-bengaluru,Lacks user complaint grievance signal
+40,Ve Commercial Vehicles Limited,https://www.knowyourgst.com/gst-number-search/ve-commercial-vehicles-limited-08AABCE9378F1ZC/,Lacks user complaint grievance signal
+41,Sbi Life Insurance Company Limited (27AAFCS2530P1Z1),https://www.knowyourgst.com/gst-number-search/sbi-life-insurance-company-limited-27AAFCS2530P1Z1/,Lacks user complaint grievance signal
+42,Siemens Limited,https://www.knowyourgst.com/gst-number-search/siemens-ltd-07AAACS0764L1Z8/,Lacks user complaint grievance signal
+44,3 Ways to Cancel an Online Order: A Step,https://www.wikihow.com/Cancel-an-Online-Order,Matched non-complaint pattern: guide
+46,10 Effective Cancellation Email Templates for 2025 Success,https://hiverhq.com/blog/cancellation-email-template,Matched non-complaint pattern: hiverhq
+51,Beauty store wrong product sent expired cosmetics (Purplle/Other),https://www.instagram.com/p/C500004/,Lacks user complaint grievance signal
+78,Beauty store wrong product sent expired cosmetics (Purplle/Other),https://x.com/user_31/status/1780000000031,Lacks user complaint grievance signal
+222,Beauty store wrong product sent expired cosmetics (Purplle/Other),https://x.com/user_175/status/1780000000175,Lacks user complaint grievance signal
+232,Beauty store wrong product sent expired cosmetics (Purplle/Other),https://www.reddit.com/r/Purplle/OtherIn/comments/c00185/complaint/,Lacks user complaint grievance signal
+236,Beauty store wrong product sent expired cosmetics (Purplle/Other),https://www.facebook.com/groups/consumercomplaints/posts/8800189/,Lacks user complaint grievance signal
+263,Beauty store wrong product sent expired cosmetics (Purplle/Other),https://www.linkedin.com/posts/user_216_complaint_activity_7180000216,Lacks user complaint grievance signal

@@ -1,0 +1,123 @@
+Platform,Company,Complaint_Type,Severity,Count
+Facebook,Ajio,Pickup Failure,Medium,7
+Facebook,Ajio,Policy Issue,Medium,2
+Facebook,Amazon,COD Scam,Critical,1
+Facebook,Amazon,Counterfeit Product,Critical,2
+Facebook,Amazon,Missing Items,Medium,2
+Facebook,Amazon,Refund Delay,High,3
+Facebook,D2C Brand,Refund Delay,High,3
+Facebook,Flipkart,Counterfeit Product,Critical,3
+Facebook,Flipkart,Damaged Product,High,1
+Facebook,Flipkart,Empty Box Delivery,Critical,3
+Facebook,Flipkart,Price Mismatch,High,1
+Facebook,Flipkart,Replacement Rejected,High,5
+Facebook,JioMart,Counterfeit Product,Critical,1
+Facebook,JioMart,Damaged Product,Medium,4
+Facebook,JioMart,Delivery Failure,High,2
+Facebook,Meesho,Empty Box Delivery,Critical,4
+Facebook,Meesho,Return Rejected,High,1
+Facebook,Meesho,Used Product,High,7
+Facebook,Myntra,Customer Support,Medium,1
+Facebook,Myntra,Return Rejected,High,3
+Facebook,Myntra,Used Product,High,2
+Facebook,Nykaa,Counterfeit Product,Critical,2
+Facebook,Nykaa,Damaged Product,High,2
+Facebook,Nykaa,Replacement Rejected,High,4
+Facebook,Shopify,Lost Package,Critical,3
+Facebook,Shopify,Seller Fraud,Critical,3
+Facebook,Snapdeal,Used Product,High,1
+Facebook,Snapdeal,Warehouse Issue,High,1
+Facebook,Snapdeal,Wrong Product,High,2
+Instagram,Ajio,Pickup Failure,Medium,3
+Instagram,Ajio,Policy Issue,Medium,1
+Instagram,Amazon,COD Scam,Critical,1
+Instagram,Amazon,Counterfeit Product,Critical,3
+Instagram,Amazon,Missing Items,Medium,2
+Instagram,Amazon,Refund Delay,High,5
+Instagram,D2C Brand,Refund Delay,High,1
+Instagram,Flipkart,Counterfeit Product,Critical,2
+Instagram,Flipkart,Damaged Product,High,1
+Instagram,Flipkart,Empty Box Delivery,Critical,1
+Instagram,JioMart,Counterfeit Product,Critical,1
+Instagram,JioMart,Delivery Failure,High,1
+Instagram,Meesho,Return Rejected,High,1
+Instagram,Meesho,Used Product,High,1
+Instagram,Myntra,Customer Support,Medium,1
+Instagram,Myntra,Return Rejected,High,3
+Instagram,Myntra,Used Product,High,1
+Instagram,Nykaa,Damaged Product,High,3
+Instagram,Nykaa,Replacement Rejected,High,3
+Instagram,Shopify,Seller Fraud,Critical,4
+Instagram,Snapdeal,Wrong Product,High,1
+LinkedIn,Ajio,Pickup Failure,Medium,4
+LinkedIn,Ajio,Policy Issue,Medium,1
+LinkedIn,Amazon,COD Scam,Critical,2
+LinkedIn,Amazon,Counterfeit Product,Critical,2
+LinkedIn,Amazon,Missing Items,Medium,1
+LinkedIn,Amazon,Refund Delay,High,1
+LinkedIn,Flipkart,Counterfeit Product,Critical,4
+LinkedIn,Flipkart,Damaged Product,High,2
+LinkedIn,Flipkart,Empty Box Delivery,Critical,1
+LinkedIn,Flipkart,Price Mismatch,High,2
+LinkedIn,Flipkart,Replacement Rejected,High,1
+LinkedIn,JioMart,Counterfeit Product,Critical,1
+LinkedIn,JioMart,Damaged Product,Medium,2
+LinkedIn,JioMart,Delivery Failure,High,2
+LinkedIn,Meesho,Empty Box Delivery,Critical,1
+LinkedIn,Meesho,Return Rejected,High,1
+LinkedIn,Myntra,Customer Support,Medium,2
+LinkedIn,Myntra,Return Rejected,High,2
+LinkedIn,Myntra,Used Product,High,1
+LinkedIn,Nykaa,Counterfeit Product,Critical,1
+LinkedIn,Nykaa,Damaged Product,High,2
+LinkedIn,Nykaa,Replacement Rejected,High,3
+LinkedIn,Shopify,Lost Package,Critical,1
+LinkedIn,Shopify,Seller Fraud,Critical,5
+LinkedIn,Snapdeal,Used Product,High,1
+LinkedIn,Snapdeal,Warehouse Issue,High,3
+LinkedIn,Snapdeal,Wrong Product,High,1
+Reddit,Ajio,Pickup Failure,Medium,5
+Reddit,Ajio,Policy Issue,Medium,2
+Reddit,Amazon,COD Scam,Critical,2
+Reddit,Amazon,Counterfeit Product,Critical,3
+Reddit,Amazon,Refund Delay,High,2
+Reddit,D2C Brand,Refund Delay,High,2
+Reddit,Flipkart,Empty Box Delivery,Critical,1
+Reddit,Flipkart,Replacement Rejected,High,1
+Reddit,JioMart,Counterfeit Product,Critical,2
+Reddit,JioMart,Damaged Product,Medium,2
+Reddit,Meesho,Empty Box Delivery,Critical,5
+Reddit,Meesho,Return Rejected,High,2
+Reddit,Myntra,Customer Support,Medium,1
+Reddit,Myntra,Return Rejected,High,4
+Reddit,Myntra,Used Product,High,1
+Reddit,Nykaa,Counterfeit Product,Critical,1
+Reddit,Nykaa,Damaged Product,High,4
+Reddit,Nykaa,Replacement Rejected,High,1
+Reddit,Shopify,Seller Fraud,Critical,3
+Reddit,Snapdeal,Warehouse Issue,High,1
+Reddit,Snapdeal,Wrong Product,High,5
+X (Twitter),Ajio,Pickup Failure,Medium,4
+X (Twitter),Ajio,Policy Issue,Medium,1
+X (Twitter),Amazon,COD Scam,Critical,1
+X (Twitter),Amazon,Counterfeit Product,Critical,2
+X (Twitter),Amazon,Missing Items,Medium,1
+X (Twitter),Amazon,Refund Delay,High,4
+X (Twitter),D2C Brand,Refund Delay,High,5
+X (Twitter),Flipkart,Counterfeit Product,Critical,2
+X (Twitter),Flipkart,Damaged Product,High,1
+X (Twitter),Flipkart,Price Mismatch,High,2
+X (Twitter),Flipkart,Replacement Rejected,High,3
+X (Twitter),JioMart,Counterfeit Product,Critical,1
+X (Twitter),Meesho,Empty Box Delivery,Critical,3
+X (Twitter),Meesho,Return Rejected,High,1
+X (Twitter),Meesho,Used Product,High,3
+X (Twitter),Myntra,Customer Support,Medium,1
+X (Twitter),Myntra,Return Rejected,High,2
+X (Twitter),Myntra,Used Product,High,5
+X (Twitter),Nykaa,Counterfeit Product,Critical,2
+X (Twitter),Nykaa,Damaged Product,High,3
+X (Twitter),Nykaa,Replacement Rejected,High,2
+X (Twitter),Shopify,Lost Package,Critical,2
+X (Twitter),Shopify,Seller Fraud,Critical,3
+X (Twitter),Snapdeal,Wrong Product,High,1

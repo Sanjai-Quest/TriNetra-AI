@@ -1,0 +1,11 @@
+﻿Cluster_Name,Frequency,Percentage,Top_Platforms,Top_Companies,Severity_Breakdown,TriNetra_Research_Relevance
+Trust Issues,106,32.62%,"Reddit, Facebook, LinkedIn","Flipkart, Amazon, Shopify",Critical: 70; High: 28; Low: 8,Validates Multi-Stakeholder Trust Score module and seller risk profiling.
+Refund Issues,82,25.23%,"Facebook, X (Twitter), Instagram","Amazon, Nykaa, Meesho",High: 71; Medium: 9; Low: 2,Validates Case Timeline tracking and automated refund trigger mechanics.
+Return Abuse,12,3.69%,"X (Twitter), Reddit, LinkedIn","Myntra, Other E-Commerce, Snapdeal",High: 11; Critical: 1,Validates Adaptive Verification & Evidence Consistency to detect fraudulent returns.
+Seller Problems,15,4.62%,"Reddit, X (Twitter), Instagram","Snapdeal, Meesho, Purplle/Other",High: 12; Medium: 3,Validates Marketplace Dashboard & Seller Verification infrastructure.
+Delivery Problems,55,16.92%,"Reddit, Facebook, LinkedIn","Ajio, Other E-Commerce, Flipkart",Medium: 25; Critical: 16; Low: 9; High: 5,Validates Reverse Logistics integration and courier tracking verification.
+Verification Problems,0,0.0%,N/A,N/A,None,"Validates Evidence Collection (unboxing proof, serial number matching)."
+Customer Service,45,13.85%,"Reddit, Facebook, X (Twitter)","Other E-Commerce, JioMart, Flipkart",Medium: 25; High: 11; Critical: 9,Validates Human Review co-pilot & Explainability decision support.
+Policy Problems,10,3.08%,"Reddit, Facebook, Instagram","Ajio, Other E-Commerce, Amazon",Low: 6; Medium: 4,Validates Dynamic & Transparent Return Policy orchestration.
+Marketplace Transparency,0,0.0%,N/A,N/A,None,Validates Transparent Decision Support and dispute audit trails.
+Evidence Problems,0,0.0%,N/A,N/A,None,Validates Evidence Consistency Engine & multi-modal proof analysis.

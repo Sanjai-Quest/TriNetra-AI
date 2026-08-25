@@ -1,0 +1,11 @@
+﻿Rank,Paper_ID,Title,Cosine_Similarity,Classification
+1,TRINETRA_0215,Toward a theory of evidence based decision making,0.396,Relevant
+2,TRINETRA_0464,Improving Dispute Resolution in Two-Sided Platforms: The Case of Review Blackmai,0.3477,Highly Relevant
+3,TRINETRA_0157,The Nature and Role of Feedback Text Comments in Online Marketplaces: Implicatio,0.2859,Relevant
+4,TRINETRA_0468,Dispute Resolution in Transnational Securities Transactions,0.2749,Highly Relevant
+5,TRINETRA_0235,"Human-in-the-Loop AI Reviewing: Feasibility, Opportunities, and Risks",0.2733,Possibly Relevant
+6,TRINETRA_0082,Explainable AI in Fintech Risk Management,0.259,Relevant
+7,TRINETRA_0084,Metrics for Explainable AI: Challenges and Prospects,0.2587,Relevant
+8,TRINETRA_0202,Electronically-Mediated Dispute Resolution and E-Commerce,0.2577,Highly Relevant
+9,TRINETRA_0816,DISPUTE RESOLUTION THROUGH ARBITRATION IN SALE AND PURCHASE AGREEMENT,0.2569,Highly Relevant
+10,TRINETRA_0158,Building Effective Online Marketplaces with Institution-Based Trust,0.254,Highly Relevant
