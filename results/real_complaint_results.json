@@ -1,0 +1,61 @@
+{
+  "metrics": {
+    "baseline_1": {
+      "tp": 91,
+      "fp": 0,
+      "tn": 111,
+      "fn": 69,
+      "precision": 1.0,
+      "recall": 0.56875,
+      "f1": 0.7250996015936254,
+      "fpr": 0.0,
+      "fnr": 0.43125
+    },
+    "baseline_2": {
+      "tp": 46,
+      "fp": 0,
+      "tn": 111,
+      "fn": 114,
+      "precision": 1.0,
+      "recall": 0.2875,
+      "f1": 0.44660194174757273,
+      "fpr": 0.0,
+      "fnr": 0.7125
+    },
+    "baseline_3": {
+      "tp": 23,
+      "fp": 0,
+      "tn": 111,
+      "fn": 137,
+      "precision": 1.0,
+      "recall": 0.14375,
+      "f1": 0.2513661202185792,
+      "fpr": 0.0,
+      "fnr": 0.85625
+    },
+    "trinetra": {
+      "tp": 160,
+      "fp": 0,
+      "tn": 111,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.0
+    }
+  },
+  "best_baseline": "baseline_1",
+  "best_baseline_fnr": 0.43125,
+  "trinetra_fnr": 0.0,
+  "fn_reduction": 1.0,
+  "mcnemar_contingency": {
+    "n00": 0,
+    "n01_tri_better": 69,
+    "n10_base_better": 0,
+    "n11": 202
+  },
+  "mcnemar_chi2": 67.01449275362319,
+  "p_value": 2.695184636965591e-16,
+  "statistically_significant": true
+}
